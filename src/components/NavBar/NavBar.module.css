@@ -1,0 +1,16 @@
+.NavBar > ul {
+  list-style: none;
+  padding: var(--s-1);
+  padding-left: 0;
+}
+
+.NavBar > ul > li {
+  display: inline-block;
+  margin-left: var(--s-1);
+  margin-right: var(--s-1);
+}
+
+.NavBar > ul > li:first-child > a {
+  font-family: var(--font-serif);
+  text-decoration: none;
+}

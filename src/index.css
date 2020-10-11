@@ -52,3 +52,13 @@
   outline: var(--border-thin) solid var(--color-dark);
   outline-offset: var(--border-thin);
 }
+
+.hidden {
+  clip-path: inset(100%) !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  position: absolute !important;
+  white-space: nowrap !important;
+  width: 1px !important;
+}
