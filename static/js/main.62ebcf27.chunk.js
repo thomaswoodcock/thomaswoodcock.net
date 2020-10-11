@@ -1,0 +1,2 @@
+(this["webpackJsonpthomaswoodcock.net"]=this["webpackJsonpthomaswoodcock.net"]||[]).push([[0],{3:function(e,t,n){e.exports=n(9)},8:function(e,t,n){},9:function(e,t,n){"use strict";n.r(t);var o=n(0),c=n.n(o),a=n(2),r=n.n(a),s=(n(8),function(){return c.a.createElement("h1",null,"Thomas Woodcock")});r.a.render(c.a.createElement(c.a.StrictMode,null,c.a.createElement(s,null)),document.getElementById("root"))}},[[3,1,2]]]);
+//# sourceMappingURL=main.62ebcf27.chunk.js.map
