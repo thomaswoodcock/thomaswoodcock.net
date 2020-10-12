@@ -1,5 +1,6 @@
 import React from "react";
 
+import Container from "../../components/Container";
 import Footer from "../../components/Footer";
 import NavBar from "../../components/NavBar";
 import SkipLink from "../../components/SkipLink";
@@ -10,7 +11,9 @@ const App = () => (
   <div className={styles.App}>
     <SkipLink />
     <NavBar links={[]} />
-    <main id="main"></main>
+    <Container>
+      <main id="main"></main>
+    </Container>
     <Footer />
   </div>
 );

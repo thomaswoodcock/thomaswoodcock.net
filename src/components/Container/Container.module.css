@@ -1,0 +1,13 @@
+.Container {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+}
+
+.Container > div {
+  display: flex;
+  flex: 1;
+  max-width: 35rem;
+  padding-left: var(--s2);
+  padding-right: var(--s2);
+}
