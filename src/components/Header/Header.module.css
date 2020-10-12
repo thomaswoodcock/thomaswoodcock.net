@@ -1,0 +1,14 @@
+.Header {
+  background-color: var(--color-dark);
+  color: var(--color-light);
+  padding-bottom: var(--s1);
+  padding-top: var(--s1);
+}
+
+.Header h1 {
+  font-size: var(--s4);
+}
+
+.Header p {
+  margin-top: var(--s-3);
+}
