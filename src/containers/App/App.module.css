@@ -4,6 +4,7 @@
   height: 100vh;
 }
 
-.App main {
+.App > main {
+  display: flex;
   flex: 1;
 }
