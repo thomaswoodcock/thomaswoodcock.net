@@ -1,7 +1,7 @@
 import React from "react";
 
-import Container from "../../components/Container";
 import Footer from "../../components/Footer";
+import Header from "../../components/Header";
 import NavBar from "../../components/NavBar";
 import SkipLink from "../../components/SkipLink";
 
@@ -12,7 +12,10 @@ const App = () => (
     <SkipLink />
     <NavBar links={[]} />
     <main id="main">
-      <Container />
+      <Header
+        subtitle="This is my personal website project."
+        title="Thomas Woodcock"
+      />
     </main>
     <Footer />
   </div>

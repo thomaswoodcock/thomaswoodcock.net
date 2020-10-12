@@ -1,5 +1,4 @@
 .Footer {
-  display: flex;
-  justify-content: center;
   padding: var(--s3);
+  text-align: center;
 }
