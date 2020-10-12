@@ -11,9 +11,9 @@ const App = () => (
   <div className={styles.App}>
     <SkipLink />
     <NavBar links={[]} />
-    <Container>
-      <main id="main"></main>
-    </Container>
+    <main id="main">
+      <Container />
+    </main>
     <Footer />
   </div>
 );
