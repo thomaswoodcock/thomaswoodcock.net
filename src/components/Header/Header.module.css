@@ -5,10 +5,6 @@
   padding-top: var(--s1);
 }
 
-.Header h1 {
-  font-size: var(--s4);
-}
-
 .Header p {
   margin-top: var(--s-3);
 }
