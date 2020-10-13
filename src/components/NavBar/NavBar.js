@@ -8,7 +8,7 @@ const NavBar = ({ links = [] }) => (
     <ul>
       <li>
         <a href="/">
-          Thomas Woodcock <span class="hidden">Home</span>
+          Thomas Woodcock <span className="hidden">Home</span>
         </a>
       </li>
       {links.map((link) => (

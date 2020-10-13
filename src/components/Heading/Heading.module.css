@@ -1,0 +1,31 @@
+h1.Heading,
+h2.Heading {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  hyphens: auto;
+  line-height: var(--line-height-small);
+}
+
+h1.Heading {
+  font-size: var(--s4);
+}
+
+h2.Heading {
+  font-size: var(--s3);
+}
+
+h3.Heading {
+  font-size: var(--s2);
+}
+
+h4.Heading {
+  font-size: var(--s1);
+}
+
+h5.Heading {
+  font-size: var(--s0);
+}
+
+h6.Heading {
+  font-size: var(--s-1);
+}
