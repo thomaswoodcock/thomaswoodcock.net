@@ -27,6 +27,16 @@ describe("<Heading />", () => {
     });
   });
 
+  it("renders h1 for unspecified level", () => {
+    // Arrange Act
+    render(<Heading>Test Heading</Heading>);
+
+    // Assert
+    expect(
+      screen.getByRole("heading", { name: /test heading/i })
+    ).toContainHTML('<h1 class="Heading">Test Heading</h1>');
+  });
+
   it("renders h1 for invalid level", () => {
     // Arrange Act
     render(<Heading level={7}>Test Heading</Heading>);
