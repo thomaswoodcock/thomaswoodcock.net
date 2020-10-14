@@ -11,8 +11,8 @@ const NavBar = ({ links = [] }) => (
           Thomas Woodcock <span className="hidden">Home</span>
         </a>
       </li>
-      {links.map((link) => (
-        <li>
+      {links.map((link, index) => (
+        <li key={index}>
           <a href={link.url}>{link.title}</a>
         </li>
       ))}
