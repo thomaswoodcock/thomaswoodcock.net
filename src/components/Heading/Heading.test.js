@@ -4,26 +4,22 @@ import { render, screen } from "@testing-library/react";
 import Heading from "./Heading";
 
 describe("<Heading />", () => {
-  const allowedLevels = {
-    1: "h1",
-    2: "h2",
-    3: "h3",
-    4: "h4",
-    5: "h5",
-    6: "h6",
-  };
-
-  Object.keys(allowedLevels).forEach((key) => {
-    it(`renders ${allowedLevels[key]} for level ${key}`, () => {
+  [
+    [1, "H1"],
+    [2, "H2"],
+    [3, "H3"],
+    [4, "H4"],
+    [5, "H5"],
+    [6, "H6"],
+  ].forEach(([level, tag]) => {
+    it(`renders ${tag} for level ${level}`, () => {
       // Arrange Act
-      render(<Heading level={+key}>Test Heading</Heading>);
+      render(<Heading level={level}>Test Heading</Heading>);
 
       // Assert
       expect(
-        screen.getByRole("heading", { name: /test heading/i })
-      ).toContainHTML(
-        `<${allowedLevels[key]} class="Heading">Test Heading</${allowedLevels[key]}>`
-      );
+        screen.getByRole("heading", { name: /test heading/i }).tagName
+      ).toBe(tag);
     });
   });
 
@@ -32,9 +28,9 @@ describe("<Heading />", () => {
     render(<Heading>Test Heading</Heading>);
 
     // Assert
-    expect(
-      screen.getByRole("heading", { name: /test heading/i })
-    ).toContainHTML('<h1 class="Heading">Test Heading</h1>');
+    expect(screen.getByRole("heading", { name: /test heading/i }).tagName).toBe(
+      "H1"
+    );
   });
 
   it("renders h1 for invalid level", () => {
@@ -42,8 +38,8 @@ describe("<Heading />", () => {
     render(<Heading level={7}>Test Heading</Heading>);
 
     // Assert
-    expect(
-      screen.getByRole("heading", { name: /test heading/i })
-    ).toContainHTML('<h1 class="Heading">Test Heading</h1>');
+    expect(screen.getByRole("heading", { name: /test heading/i }).tagName).toBe(
+      "H1"
+    );
   });
 });
