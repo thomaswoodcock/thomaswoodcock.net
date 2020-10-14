@@ -18,7 +18,7 @@ describe("<Heading />", () => {
 
       // Assert
       expect(
-        screen.getByRole("heading", { name: /test heading/i }).tagName
+        screen.getByRole("heading", { name: "Test Heading" }).tagName
       ).toBe(tag);
     });
   });
@@ -28,7 +28,7 @@ describe("<Heading />", () => {
     render(<Heading>Test Heading</Heading>);
 
     // Assert
-    expect(screen.getByRole("heading", { name: /test heading/i }).tagName).toBe(
+    expect(screen.getByRole("heading", { name: "Test Heading" }).tagName).toBe(
       "H1"
     );
   });
@@ -38,7 +38,7 @@ describe("<Heading />", () => {
     render(<Heading level={7}>Test Heading</Heading>);
 
     // Assert
-    expect(screen.getByRole("heading", { name: /test heading/i }).tagName).toBe(
+    expect(screen.getByRole("heading", { name: "Test Heading" }).tagName).toBe(
       "H1"
     );
   });
