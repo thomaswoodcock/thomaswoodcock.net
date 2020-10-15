@@ -1,0 +1,30 @@
+.Spinner {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+}
+
+.Spinner > svg {
+  animation: spin 1s infinite linear;
+  height: 50px;
+  width: 50px;
+}
+
+.Spinner > svg > circle {
+  fill: none;
+  stroke: var(--color-dark);
+  stroke-dasharray: 280;
+  stroke-dashoffset: 75;
+  stroke-width: 15;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
