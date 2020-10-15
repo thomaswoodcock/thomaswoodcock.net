@@ -1,0 +1,2 @@
+(this["webpackJsonpthomaswoodcock.net"]=this["webpackJsonpthomaswoodcock.net"]||[]).push([[4],{39:function(t,n,e){t.exports={NotFound:"NotFound_NotFound__1yEnA"}},41:function(t,n,e){"use strict";e.r(n),e.d(n,"default",(function(){return r}));var o=e(0),a=e.n(o),c=e(6),u=e(39),l=e.n(u),r=function(){return a.a.createElement("div",{className:l.a.NotFound},a.a.createElement("h1",null,"404"),a.a.createElement("h2",null,"Page not found."),a.a.createElement("p",null,a.a.createElement(c.Link,{to:"/"},"Back to thomaswoodcock.net")))}}}]);
+//# sourceMappingURL=4.002eb769.chunk.js.map
