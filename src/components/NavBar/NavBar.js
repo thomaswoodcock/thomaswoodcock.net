@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 import styles from "./NavBar.module.css";
 
@@ -7,13 +8,13 @@ const NavBar = ({ links = [] }) => (
   <nav className={styles.NavBar}>
     <ul>
       <li>
-        <a href="/">
+        <Link to="/">
           Thomas Woodcock <span className="hidden">Home</span>
-        </a>
+        </Link>
       </li>
       {links.map((link, index) => (
         <li key={index}>
-          <a href={link.url}>{link.title}</a>
+          <Link to={link.url}>{link.title}</Link>
         </li>
       ))}
     </ul>

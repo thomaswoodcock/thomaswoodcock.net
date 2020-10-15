@@ -1,11 +1,12 @@
 import React from "react";
+import { HashLink } from "react-router-hash-link";
 
 import styles from "./SkipLink.module.css";
 
 const SkipLink = () => (
-  <a className={styles.SkipLink} href="#main">
+  <HashLink className={styles.SkipLink} to="#main">
     Skip to content
-  </a>
+  </HashLink>
 );
 
 export default SkipLink;
