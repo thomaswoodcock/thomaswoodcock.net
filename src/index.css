@@ -53,13 +53,6 @@
   outline-offset: var(--border-thin);
 }
 
-h1 {
-  font-family: var(--font-serif);
-  font-weight: 700;
-  hyphens: auto;
-  line-height: var(--line-height-small);
-}
-
 .hidden {
   clip-path: inset(100%) !important;
   clip: rect(1px, 1px, 1px, 1px) !important;
