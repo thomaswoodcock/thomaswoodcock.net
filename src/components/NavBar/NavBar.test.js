@@ -20,6 +20,8 @@ describe("<NavBar />", () => {
 
     // Assert
     const link = screen.getByRole("link", { name: "Test Link" });
+
+    expect(screen.getByRole("navigation")).toContainElement(link);
     expect(link).toBeVisible();
 
     userEvent.click(link);

@@ -18,7 +18,7 @@ const Home = () => (
           {"I'm Tom, I'm a web developer, and this is my personal website. "}
         </Paragraph>
         <Paragraph>
-          {`There's not much here, yet, but eventually, this is where I'll show
+          {`There's not much here, yet, but eventually this is where I'll show
           and discuss the projects that I'm working on.`}
         </Paragraph>
         <Paragraph>
