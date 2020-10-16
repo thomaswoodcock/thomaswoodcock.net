@@ -1,4 +1,4 @@
-.NotFound {
+.ErrorBoundary {
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -7,6 +7,6 @@
   text-align: center;
 }
 
-.NotFound > h1 {
+.ErrorBoundary > h1 {
   font-size: var(--s5);
 }
