@@ -5,7 +5,16 @@ import styles from "./Spinner.module.css";
 const Spinner = () => (
   <div className={styles.Spinner} role="progressbar">
     <svg viewBox="0 0 100 100">
-      <circle cx="50" cy="50" r="42" />
+      <circle
+        cx="50"
+        cy="50"
+        fill="none"
+        r="42"
+        stroke="black"
+        strokeDasharray="280"
+        strokeDashoffset="75"
+        strokeWidth="15"
+      />
     </svg>
   </div>
 );

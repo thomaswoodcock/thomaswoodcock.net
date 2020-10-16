@@ -12,11 +12,7 @@
 }
 
 .Spinner > svg > circle {
-  fill: none;
   stroke: var(--color-dark);
-  stroke-dasharray: 280;
-  stroke-dashoffset: 75;
-  stroke-width: 15;
 }
 
 @keyframes spin {
