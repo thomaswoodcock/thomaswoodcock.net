@@ -1,0 +1,11 @@
+.Button {
+  background-color: var(--color-dark);
+  border-color: var(--color-dark);
+  border-width: var(--border-thin);
+  color: var(--color-light);
+  cursor: pointer;
+  display: inline-block;
+  font-size: inherit;
+  font-weight: 700;
+  padding: var(--s-2) var(--s1);
+}

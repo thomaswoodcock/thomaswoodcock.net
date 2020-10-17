@@ -10,3 +10,7 @@
 .ErrorBoundary > h1 {
   font-size: var(--s5);
 }
+
+.ErrorBoundary > button {
+  margin-top: var(--s1);
+}
