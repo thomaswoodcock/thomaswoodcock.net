@@ -1,0 +1,1 @@
+{"version":3,"sources":["Paragraph.module.css","NotFound.module.css"],"names":[],"mappings":"AAAA,8BACE,oBACF,CCFA,6BACE,mBACF","file":"4.b5535ffa.chunk.css","sourcesContent":["* + .Paragraph {\n  margin-top: var(--s0);\n}\n",".NotFound > h1 {\n  font-size: var(--s5);\n}\n"]}
