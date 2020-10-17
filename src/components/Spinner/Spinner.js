@@ -1,9 +1,11 @@
 import React from "react";
 
+import Box from "../Box";
+
 import styles from "./Spinner.module.css";
 
 const Spinner = () => (
-  <div className={styles.Spinner} role="progressbar">
+  <Box className={styles.Spinner} role="progressbar">
     <svg viewBox="0 0 100 100">
       <circle
         cx="50"
@@ -16,7 +18,7 @@ const Spinner = () => (
         strokeWidth="15"
       />
     </svg>
-  </div>
+  </Box>
 );
 
 export default Spinner;

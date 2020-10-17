@@ -1,12 +1,3 @@
-.ErrorBoundary {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  justify-content: center;
-  text-align: center;
-}
-
 .ErrorBoundary > h1 {
   font-size: var(--s5);
 }
