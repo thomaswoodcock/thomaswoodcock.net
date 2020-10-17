@@ -1,10 +1,3 @@
-.Spinner {
-  align-items: center;
-  display: flex;
-  height: 100%;
-  justify-content: center;
-}
-
 .Spinner > svg {
   animation: spin 1s infinite linear;
   height: 50px;
