@@ -12,7 +12,7 @@ const Spinner = () => (
         cy="50"
         fill="none"
         r="42"
-        stroke="black"
+        stroke="currentColor"
         strokeDasharray="280"
         strokeDashoffset="75"
         strokeWidth="15"

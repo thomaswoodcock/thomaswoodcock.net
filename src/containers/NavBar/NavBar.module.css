@@ -1,0 +1,56 @@
+.NavBar {
+  display: flex;
+  list-style: none;
+  padding: var(--s-1);
+}
+
+.NavBar > a {
+  font-family: var(--font-serif);
+  text-decoration: none;
+}
+
+.NavBar > button {
+  display: none;
+}
+
+.NavBar > ul {
+  display: flex;
+  flex-grow: 1;
+}
+
+.NavBar > a,
+.NavBar > ul > li {
+  display: inline-block;
+  margin-left: var(--s-1);
+  margin-right: var(--s-1);
+}
+
+@media (max-width: 600px) {
+  .NavBar,
+  .NavBar > ul {
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .NavBar > button {
+    width: 100%;
+  }
+
+  .NavBar > button > svg {
+    width: 0.75rem;
+    height: 0.75rem;
+    margin-right: var(--s-3);
+  }
+
+  .NavBar > [aria-expanded="false"] + ul {
+    display: none;
+  }
+
+  .NavBar > a,
+  .NavBar > button,
+  .NavBar > ul > li {
+    display: block;
+    margin-bottom: var(--s-2);
+    margin-top: var(--s-2);
+  }
+}

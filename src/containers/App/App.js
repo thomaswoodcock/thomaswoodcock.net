@@ -3,7 +3,7 @@ import { Redirect, Route, Switch } from "react-router-dom";
 
 import ErrorBoundary from "../../components/ErrorBoundary";
 import Footer from "../../components/Footer";
-import NavBar from "../../components/NavBar";
+import NavBar from "../NavBar";
 import SkipLink from "../../components/SkipLink";
 import Spinner from "../../components/Spinner";
 
