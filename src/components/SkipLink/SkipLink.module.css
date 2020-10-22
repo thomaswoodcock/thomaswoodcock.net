@@ -1,6 +1,6 @@
 @value sizeM1 from "../../styles/sizing.css";
 
-.SkipLink {
+.root {
   composes: inverted from "../../styles/colors.css";
   display: inline-block;
   padding: sizeM1;
@@ -8,7 +8,7 @@
   top: -10rem;
 }
 
-.SkipLink:focus {
+.root:focus {
   outline: none;
   position: absolute;
   top: 0;
