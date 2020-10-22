@@ -7,12 +7,12 @@
   padding-top: size1;
 }
 
-.root p {
-  margin-top: sizeM3;
-}
-
 .container {
   composes: contained from "../../styles/display.css";
+}
+
+.subtitle {
+  margin-top: sizeM3;
 }
 
 @media (max-width: 600px) {

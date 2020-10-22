@@ -9,7 +9,7 @@ const Header = ({ subtitle, title }) => (
   <header className={styles.root}>
     <div className={styles.container}>
       <Heading level={1}>{title}</Heading>
-      {subtitle && <p>{subtitle}</p>}
+      {subtitle && <p className={styles.subtitle}>{subtitle}</p>}
     </div>
   </header>
 );
