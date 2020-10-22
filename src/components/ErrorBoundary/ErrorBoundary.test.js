@@ -5,8 +5,20 @@ import userEvent from "@testing-library/user-event";
 import ErrorBoundary from "./ErrorBoundary";
 
 describe("<ErrorBoundary />", () => {
+  let initialError;
+
+  beforeAll(() => {
+    initialError = console.error;
+  });
+
+  afterEach(() => {
+    console.error = initialError;
+  });
+
   it("renders error message with reload button if error occurs", () => {
     // Arrange
+    console.error = jest.fn();
+
     const ErrorComponent = jest
       .fn()
       .mockImplementation(() => "Test Child")
