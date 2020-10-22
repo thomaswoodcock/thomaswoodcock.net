@@ -8,6 +8,6 @@
   font-size: size5;
 }
 
-.root > button {
-  margin-top: size1;
+.button {
+  composes: default from "../../styles/buttons.css";
 }
