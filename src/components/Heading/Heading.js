@@ -4,18 +4,18 @@ import PropTypes from "prop-types";
 import styles from "./Heading.module.css";
 
 const levels = {
-  1: "h1",
-  2: "h2",
-  3: "h3",
-  4: "h4",
-  5: "h5",
-  6: "h6",
+  1: ["h1", styles.level1],
+  2: ["h2", styles.level2],
+  3: ["h3", styles.level3],
+  4: ["h4", styles.level4],
+  5: ["h5", styles.level5],
+  6: ["h6", styles.level6],
 };
 
 const Heading = ({ children, level = 1 }) => {
-  const Component = levels[level] || levels[1];
+  const [Component, levelClass] = levels[level] || levels[1];
 
-  return <Component className={styles.Heading}>{children}</Component>;
+  return <Component className={levelClass}>{children}</Component>;
 };
 
 Heading.propTypes = {

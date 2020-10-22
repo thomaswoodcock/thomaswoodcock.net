@@ -1,36 +1,33 @@
 @value baseRatio, size0, size1, size2, size3, size4, sizeM1 from "../../styles/sizing.css";
 
-.Heading {
+.level1,
+.level2 {
   composes: serif from "../../styles/typography.css";
-}
-
-h1.Heading,
-h2.Heading {
   font-weight: 700;
   hyphens: auto;
   line-height: calc(0.8 * baseRatio);
 }
 
-h1.Heading {
+.level1 {
   font-size: size4;
 }
 
-h2.Heading {
+.level2 {
   font-size: size3;
 }
 
-h3.Heading {
+.level3 {
   font-size: size2;
 }
 
-h4.Heading {
+.level4 {
   font-size: size1;
 }
 
-h5.Heading {
+.level5 {
   font-size: size0;
 }
 
-h6.Heading {
+.level6 {
   font-size: sizeM1;
 }
