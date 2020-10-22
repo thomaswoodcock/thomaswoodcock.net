@@ -1,7 +1,11 @@
-@value size5 from "../../styles/sizing.css";
+@value size0, size5 from "../../styles/sizing.css";
 
 .root {
   composes: centralized from "../../styles/display.css";
+}
+
+.link {
+  margin-top: size0;
 }
 
 .root > h1 {
