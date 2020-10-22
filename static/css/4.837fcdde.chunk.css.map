@@ -1,0 +1,1 @@
+{"version":3,"sources":["NotFound.module.css"],"names":[],"mappings":"AAMA,yBACE,oBACF,CAEA,sBACE,eACF","file":"4.837fcdde.chunk.css","sourcesContent":["@value size0, size5 from \"../../styles/sizing.css\";\n\n.root {\n  composes: centralized from \"../../styles/display.css\";\n}\n\n.heading {\n  font-size: size5;\n}\n\n.link {\n  margin-top: size0;\n}\n"]}
