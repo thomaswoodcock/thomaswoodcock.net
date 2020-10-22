@@ -1,10 +1,10 @@
 import React, { lazy, Suspense } from "react";
 import { Redirect, Route, Switch } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 
 import ErrorBoundary from "../../components/ErrorBoundary";
 import Footer from "../../components/Footer";
 import NavBar from "../NavBar";
-import SkipLink from "../../components/SkipLink";
 import Spinner from "../../components/Spinner";
 
 import styles from "./App.module.css";
@@ -19,7 +19,9 @@ const App = () => (
         <Switch>
           <Route component={NotFound} exact path="/404" />
           <Route>
-            <SkipLink />
+            <HashLink className={styles.skip} to="#main">
+              Skip to content
+            </HashLink>
             <NavBar links={[]} />
             <main className={styles.main} id="main">
               <Suspense fallback={<Spinner />}>
