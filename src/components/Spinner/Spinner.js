@@ -4,7 +4,7 @@ import styles from "./Spinner.module.css";
 
 const Spinner = () => (
   <div className={styles.root} role="progressbar">
-    <svg viewBox="0 0 100 100">
+    <svg className={styles.icon} viewBox="0 0 100 100">
       <circle
         cx="50"
         cy="50"
