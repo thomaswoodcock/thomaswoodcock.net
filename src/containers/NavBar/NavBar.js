@@ -2,8 +2,6 @@ import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { Link, useLocation } from "react-router-dom";
 
-import Button from "../../components/Button";
-
 import styles from "./NavBar.module.css";
 
 const NavBar = ({ links = [] }) => {
@@ -15,17 +13,18 @@ const NavBar = ({ links = [] }) => {
   }, [location]);
 
   return (
-    <nav className={styles.NavBar}>
-      <Link to="/">
-        Thomas Woodcock <span className="hidden">Home</span>
+    <nav className={styles.root}>
+      <Link className={styles.homeLink} to="/">
+        Thomas Woodcock <span className={styles.visuallyHidden}>Home</span>
       </Link>
       {links.length > 0 && (
         <>
-          <Button
-            ariaExpanded={expanded}
+          <button
+            aria-expanded={expanded}
+            className={styles.menuButton}
             onClick={() => setExpanded((exp) => !exp)}
           >
-            <svg viewBox="0 0 100 100">
+            <svg className={styles.icon} viewBox="0 0 100 100">
               <path
                 d="M3,7 95,7 M3,50 95,50 M3,92 93,93"
                 fill="none"
@@ -35,10 +34,10 @@ const NavBar = ({ links = [] }) => {
               />
             </svg>
             Menu
-          </Button>
-          <ul>
+          </button>
+          <ul className={styles.linkList}>
             {links.map((link, index) => (
-              <li key={index}>
+              <li className={styles.linkListItem} key={index}>
                 <Link to={link.url}>{link.title}</Link>
               </li>
             ))}

@@ -1,8 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import Box from "../Box";
-import Button from "../Button";
 import Heading from "../Heading";
 
 import styles from "./ErrorBoundary.module.css";
@@ -23,11 +21,15 @@ class ErrorBoundary extends React.Component {
   render() {
     if (this.state.hasError) {
       return (
-        <Box className={styles.ErrorBoundary}>
-          <Heading level={1}>Error</Heading>
+        <div className={styles.root}>
+          <Heading className={styles.heading} level={1}>
+            Error
+          </Heading>
           <Heading level={2}>Something went wrong.</Heading>
-          <Button onClick={this.reset}>Reload</Button>
-        </Box>
+          <button className={styles.button} onClick={this.reset}>
+            Reload
+          </button>
+        </div>
       );
     }
 

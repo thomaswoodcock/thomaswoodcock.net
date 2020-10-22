@@ -1,4 +1,8 @@
-.Spinner > svg {
+.root {
+  composes: centralized from "../../styles/display.css";
+}
+
+.icon {
   animation: spin 1s infinite linear;
   height: 50px;
   width: 50px;

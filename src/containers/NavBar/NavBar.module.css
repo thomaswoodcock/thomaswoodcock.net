@@ -1,56 +1,63 @@
-.NavBar {
+@value sizeM1, sizeM2, sizeM3 from "../../styles/sizing.css";
+
+.root {
   display: flex;
   list-style: none;
-  padding: var(--s-1);
+  padding: sizeM1;
 }
 
-.NavBar > a {
-  font-family: var(--font-serif);
+.homeLink {
+  composes: serif from "../../styles/typography.css";
   text-decoration: none;
 }
 
-.NavBar > button {
-  display: none;
+.homeLink,
+.linkListItem {
+  display: inline-block;
+  margin-left: sizeM1;
+  margin-right: sizeM1;
 }
 
-.NavBar > ul {
+.linkList {
   display: flex;
   flex-grow: 1;
 }
 
-.NavBar > a,
-.NavBar > ul > li {
-  display: inline-block;
-  margin-left: var(--s-1);
-  margin-right: var(--s-1);
+.menuButton {
+  composes: default from "../../styles/buttons.css";
+  display: none;
+}
+
+.visuallyHidden {
+  composes: visuallyHidden from "../../styles/display.css";
 }
 
 @media (max-width: 600px) {
-  .NavBar,
-  .NavBar > ul {
+  .root,
+  .linkList {
     align-items: center;
     flex-direction: column;
   }
 
-  .NavBar > button {
+  .homeLink,
+  .menuButton,
+  .linkListItem {
+    display: block;
+    margin-bottom: sizeM2;
+    margin-top: sizeM2;
+  }
+
+  .icon {
+    width: 0.75rem;
+    height: 0.75rem;
+    margin-right: sizeM3;
+  }
+
+  .menuButton {
     width: 100%;
   }
 
-  .NavBar > button > svg {
-    width: 0.75rem;
-    height: 0.75rem;
-    margin-right: var(--s-3);
-  }
-
-  .NavBar > [aria-expanded="false"] + ul {
+  .root > [aria-expanded="false"] + .linkList {
     display: none;
-  }
-
-  .NavBar > a,
-  .NavBar > button,
-  .NavBar > ul > li {
-    display: block;
-    margin-bottom: var(--s-2);
-    margin-top: var(--s-2);
   }
 }

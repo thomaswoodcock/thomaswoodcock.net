@@ -1,3 +1,13 @@
-.NotFound > h1 {
-  font-size: var(--s5);
+@value size0, size5 from "../../styles/sizing.css";
+
+.root {
+  composes: centralized from "../../styles/display.css";
+}
+
+.heading {
+  font-size: size5;
+}
+
+.link {
+  margin-top: size0;
 }

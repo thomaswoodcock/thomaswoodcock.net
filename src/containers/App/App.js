@@ -13,7 +13,7 @@ const Home = lazy(() => import("../../pages/Home"));
 const NotFound = lazy(() => import("../../pages/NotFound"));
 
 const App = () => (
-  <div className={styles.App}>
+  <div className={styles.root}>
     <ErrorBoundary>
       <Suspense fallback={<Spinner />}>
         <Switch>
@@ -21,7 +21,7 @@ const App = () => (
           <Route>
             <SkipLink />
             <NavBar links={[]} />
-            <main id="main">
+            <main className={styles.main} id="main">
               <Suspense fallback={<Spinner />}>
                 <Switch>
                   <Route component={Home} exact path="/" />

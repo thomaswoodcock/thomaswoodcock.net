@@ -4,6 +4,16 @@ import { render, screen } from "@testing-library/react";
 import Heading from "./Heading";
 
 describe("<Heading />", () => {
+  let initialError;
+
+  beforeAll(() => {
+    initialError = console.error;
+  });
+
+  afterEach(() => {
+    console.error = initialError;
+  });
+
   [
     [1, "H1"],
     [2, "H2"],
@@ -34,7 +44,10 @@ describe("<Heading />", () => {
   });
 
   it("renders h1 for invalid level", () => {
-    // Arrange Act
+    // Arrange
+    console.error = jest.fn();
+
+    // Act
     render(<Heading level={7}>Test Heading</Heading>);
 
     // Assert

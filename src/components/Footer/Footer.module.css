@@ -1,4 +1,10 @@
-.Footer {
-  padding: var(--s3);
+@value size3 from "../../styles/sizing.css";
+
+.root {
+  padding: size3;
   text-align: center;
+}
+
+.container {
+  composes: contained from "../../styles/display.css";
 }

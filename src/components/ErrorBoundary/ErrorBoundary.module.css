@@ -1,7 +1,14 @@
-.ErrorBoundary > h1 {
-  font-size: var(--s5);
+@value size1, size5 from "../../styles/sizing.css";
+
+.root {
+  composes: centralized from "../../styles/display.css";
 }
 
-.ErrorBoundary > button {
-  margin-top: var(--s1);
+.button {
+  composes: default from "../../styles/buttons.css";
+  margin-top: size1;
+}
+
+.heading {
+  font-size: size5;
 }

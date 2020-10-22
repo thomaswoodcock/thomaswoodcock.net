@@ -1,13 +1,14 @@
-.SkipLink {
-  background-color: var(--color-dark);
-  color: var(--color-light);
+@value sizeM1 from "../../styles/sizing.css";
+
+.root {
+  composes: inverted from "../../styles/colors.css";
   display: inline-block;
-  padding: var(--s-1);
+  padding: sizeM1;
   position: absolute;
   top: -10rem;
 }
 
-.SkipLink:focus {
+.root:focus {
   outline: none;
   position: absolute;
   top: 0;

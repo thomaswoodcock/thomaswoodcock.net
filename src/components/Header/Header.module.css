@@ -1,17 +1,22 @@
-.Header {
-  background-color: var(--color-dark);
-  color: var(--color-light);
-  margin-bottom: var(--s3);
-  padding-bottom: var(--s1);
-  padding-top: var(--s1);
+@value size1, size3, sizeM3 from "../../styles/sizing.css";
+
+.root {
+  composes: inverted from "../../styles/colors.css";
+  margin-bottom: size3;
+  padding-bottom: size1;
+  padding-top: size1;
 }
 
-.Header p {
-  margin-top: var(--s-3);
+.container {
+  composes: contained from "../../styles/display.css";
+}
+
+.subtitle {
+  margin-top: sizeM3;
 }
 
 @media (max-width: 600px) {
-  .Header h1 {
-    font-size: var(--s3);
+  .heading {
+    font-size: size3;
   }
 }

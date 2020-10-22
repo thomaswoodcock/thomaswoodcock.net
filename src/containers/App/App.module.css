@@ -1,9 +1,25 @@
-.App {
+@value borderSize from "../../styles/borders.css";
+@value baseRatio, sizeM5 from "../../styles/sizing.css";
+
+:root {
+  font-size: calc(0.333vw + 1em);
+  line-height: baseRatio;
+}
+
+:focus {
+  outline-offset: borderSize;
+  outline-style: solid;
+  outline-width: borderSize;
+}
+
+.root {
+  composes: default from "../../styles/colors.css";
+  composes: sans from "../../styles/typography.css";
   display: flex;
   flex-direction: column;
   height: 100vh;
 }
 
-.App > main {
+.main {
   flex: 1;
 }
