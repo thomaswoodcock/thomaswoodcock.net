@@ -1,5 +1,5 @@
 @value borderSize from "../../styles/borders.css";
-@value baseRatio, sizeM5 from "../../styles/sizing.css";
+@value baseRatio, sizeM1, sizeM5 from "../../styles/sizing.css";
 
 :root {
   font-size: calc(0.333vw + 1em);
@@ -22,4 +22,19 @@
 
 .main {
   flex: 1;
+}
+
+.skip {
+  composes: inverted from "../../styles/colors.css";
+  display: inline-block;
+  padding: sizeM1;
+  position: absolute;
+  top: -10rem;
+}
+
+.skip:focus {
+  outline: none;
+  position: absolute;
+  top: 0;
+  z-index: 1;
 }
