@@ -17,7 +17,7 @@ const NavBar = ({ links = [] }) => {
       <Link className={styles.homeLink} to="/">
         Thomas Woodcock <span className={styles.visuallyHidden}>Home</span>
       </Link>
-      {links.length === 0 && (
+      {links.length > 0 && (
         <>
           <button
             aria-expanded={expanded}
