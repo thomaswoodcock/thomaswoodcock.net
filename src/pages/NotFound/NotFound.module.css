@@ -1,5 +1,9 @@
 @value size5 from "../../styles/sizing.css";
 
-.NotFound > h1 {
+.root {
+  composes: centralized from "../../styles/display.css";
+}
+
+.root > h1 {
   font-size: size5;
 }
