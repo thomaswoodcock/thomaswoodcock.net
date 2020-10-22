@@ -1,0 +1,47 @@
+@value dark: #252525;
+@value light: #f5f5f5;
+
+/* Background color */
+.bgDark {
+  background-color: dark;
+}
+
+.bgLight {
+  background-color: light;
+}
+
+/* Border color */
+.borderDark {
+  border-color: dark;
+}
+
+.borderLight {
+  border-color: light;
+}
+
+/* Outline color */
+.outlineDark {
+  outline-color: dark;
+}
+
+.outlineLight {
+  outline-color: light;
+}
+
+/* Text color */
+.textDark {
+  color: dark;
+}
+
+.textLight {
+  color: light;
+}
+
+/* Compositions */
+.default {
+  composes: bgLight borderDark outlineDark textDark;
+}
+
+.inverted {
+  composes: bgDark borderLight outlineLight textLight;
+}

@@ -13,7 +13,7 @@ const Home = lazy(() => import("../../pages/Home"));
 const NotFound = lazy(() => import("../../pages/NotFound"));
 
 const App = () => (
-  <div className={styles.App}>
+  <div className={styles.root}>
     <ErrorBoundary>
       <Suspense fallback={<Spinner />}>
         <Switch>

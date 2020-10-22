@@ -1,0 +1,12 @@
+@value size1, sizeM2 from "./sizing.css";
+
+.default {
+  composes: default from "./borders.css";
+  composes: inverted from "./colors.css";
+  composes: special from "./typography.css";
+  cursor: pointer;
+  display: inline-block;
+  font-size: inherit;
+  font-weight: 700;
+  padding: sizeM2 size1;
+}

@@ -1,0 +1,5 @@
+{
+  // Disables CSS Modules-related warnings.
+  "css.lint.unknownAtRules": "ignore",
+  "css.lint.validProperties": ["composes"]
+}

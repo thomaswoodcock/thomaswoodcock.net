@@ -1,16 +1,9 @@
+@value sizeM1, sizeM2, sizeM3 from "../../styles/sizing.css";
+
 .NavBar {
   display: flex;
   list-style: none;
-  padding: var(--s-1);
-}
-
-.NavBar > a {
-  font-family: var(--font-serif);
-  text-decoration: none;
-}
-
-.NavBar > button {
-  display: none;
+  padding: sizeM1;
 }
 
 .NavBar > ul {
@@ -18,11 +11,25 @@
   flex-grow: 1;
 }
 
-.NavBar > a,
+.homeLink,
 .NavBar > ul > li {
   display: inline-block;
-  margin-left: var(--s-1);
-  margin-right: var(--s-1);
+  margin-left: sizeM1;
+  margin-right: sizeM1;
+}
+
+.homeLink {
+  composes: serif from "../../styles/typography.css";
+  text-decoration: none;
+}
+
+.menuButton {
+  composes: default from "../../styles/buttons.css";
+  display: none;
+}
+
+.visuallyHidden {
+  composes: visuallyHidden from "../../styles/display.css";
 }
 
 @media (max-width: 600px) {
@@ -32,25 +39,25 @@
     flex-direction: column;
   }
 
-  .NavBar > button {
+  .menuButton {
     width: 100%;
   }
 
-  .NavBar > button > svg {
+  .menuButton > svg {
     width: 0.75rem;
     height: 0.75rem;
-    margin-right: var(--s-3);
+    margin-right: sizeM3;
   }
 
   .NavBar > [aria-expanded="false"] + ul {
     display: none;
   }
 
-  .NavBar > a,
-  .NavBar > button,
+  .homeLink,
+  .menuButton,
   .NavBar > ul > li {
     display: block;
-    margin-bottom: var(--s-2);
-    margin-top: var(--s-2);
+    margin-bottom: sizeM2;
+    margin-top: sizeM2;
   }
 }

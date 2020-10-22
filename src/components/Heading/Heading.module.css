@@ -1,31 +1,36 @@
+@value baseRatio, size0, size1, size2, size3, size4, sizeM1 from "../../styles/sizing.css";
+
+.Heading {
+  composes: serif from "../../styles/typography.css";
+}
+
 h1.Heading,
 h2.Heading {
-  font-family: var(--font-serif);
   font-weight: 700;
   hyphens: auto;
-  line-height: var(--line-height-small);
+  line-height: calc(0.8 * baseRatio);
 }
 
 h1.Heading {
-  font-size: var(--s4);
+  font-size: size4;
 }
 
 h2.Heading {
-  font-size: var(--s3);
+  font-size: size3;
 }
 
 h3.Heading {
-  font-size: var(--s2);
+  font-size: size2;
 }
 
 h4.Heading {
-  font-size: var(--s1);
+  font-size: size1;
 }
 
 h5.Heading {
-  font-size: var(--s0);
+  font-size: size0;
 }
 
 h6.Heading {
-  font-size: var(--s-1);
+  font-size: sizeM1;
 }

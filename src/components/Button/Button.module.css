@@ -1,12 +1,12 @@
+@value size1, sizeM2 from "../../styles/sizing.css";
+
 .Button {
-  background-color: var(--color-dark);
-  border-color: var(--color-dark);
-  border-width: var(--border-thin);
-  color: var(--color-light);
+  composes: default from "../../styles/borders.css";
+  composes: inverted from "../../styles/colors.css";
+  composes: fontSpecial from "../../styles/typography.css";
   cursor: pointer;
   display: inline-block;
-  font-family: var(--font-special);
   font-size: inherit;
   font-weight: 700;
-  padding: var(--s-2) var(--s1);
+  padding: sizeM2 size1;
 }

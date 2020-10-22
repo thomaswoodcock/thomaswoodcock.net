@@ -1,7 +1,9 @@
+@value size1, size5 from "../../styles/sizing.css";
+
 .ErrorBoundary > h1 {
-  font-size: var(--s5);
+  font-size: size5;
 }
 
 .ErrorBoundary > button {
-  margin-top: var(--s1);
+  margin-top: size1;
 }

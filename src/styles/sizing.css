@@ -1,0 +1,13 @@
+@value baseRatio: 1.4;
+
+@value size0: 1rem;
+@value sizeM5: calc(size0 / baseRatio / baseRatio / baseRatio / baseRatio / baseRatio);
+@value sizeM4: calc(size0 / baseRatio / baseRatio / baseRatio / baseRatio);
+@value sizeM3: calc(size0 / baseRatio / baseRatio / baseRatio);
+@value sizeM2: calc(size0 / baseRatio / baseRatio);
+@value sizeM1: calc(size0 / baseRatio);
+@value size1: calc(size0 * baseRatio);
+@value size2: calc(size0 * baseRatio * baseRatio);
+@value size3: calc(size0 * baseRatio * baseRatio * baseRatio);
+@value size4: calc(size0 * baseRatio * baseRatio * baseRatio * baseRatio);
+@value size5: calc(size0 * baseRatio * baseRatio * baseRatio * baseRatio * baseRatio);

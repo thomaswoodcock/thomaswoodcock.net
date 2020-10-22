@@ -1,4 +1,6 @@
+@value size3 from "../../styles/sizing.css";
+
 .Footer {
-  padding: var(--s3);
+  padding: size3;
   text-align: center;
 }
