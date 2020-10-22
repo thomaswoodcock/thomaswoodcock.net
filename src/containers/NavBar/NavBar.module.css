@@ -1,26 +1,26 @@
 @value sizeM1, sizeM2, sizeM3 from "../../styles/sizing.css";
 
-.NavBar {
+.root {
   display: flex;
   list-style: none;
   padding: sizeM1;
 }
 
-.NavBar > ul {
-  display: flex;
-  flex-grow: 1;
+.homeLink {
+  composes: serif from "../../styles/typography.css";
+  text-decoration: none;
 }
 
 .homeLink,
-.NavBar > ul > li {
+.linkListItem {
   display: inline-block;
   margin-left: sizeM1;
   margin-right: sizeM1;
 }
 
-.homeLink {
-  composes: serif from "../../styles/typography.css";
-  text-decoration: none;
+.linkList {
+  display: flex;
+  flex-grow: 1;
 }
 
 .menuButton {
@@ -33,31 +33,31 @@
 }
 
 @media (max-width: 600px) {
-  .NavBar,
-  .NavBar > ul {
+  .root,
+  .linkList {
     align-items: center;
     flex-direction: column;
+  }
+
+  .homeLink,
+  .menuButton,
+  .linkListItem {
+    display: block;
+    margin-bottom: sizeM2;
+    margin-top: sizeM2;
+  }
+
+  .icon {
+    width: 0.75rem;
+    height: 0.75rem;
+    margin-right: sizeM3;
   }
 
   .menuButton {
     width: 100%;
   }
 
-  .menuButton > svg {
-    width: 0.75rem;
-    height: 0.75rem;
-    margin-right: sizeM3;
-  }
-
-  .NavBar > [aria-expanded="false"] + ul {
+  .root > [aria-expanded="false"] + .linkList {
     display: none;
-  }
-
-  .homeLink,
-  .menuButton,
-  .NavBar > ul > li {
-    display: block;
-    margin-bottom: sizeM2;
-    margin-top: sizeM2;
   }
 }

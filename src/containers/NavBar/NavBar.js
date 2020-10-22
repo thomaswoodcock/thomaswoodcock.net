@@ -13,7 +13,7 @@ const NavBar = ({ links = [] }) => {
   }, [location]);
 
   return (
-    <nav className={styles.NavBar}>
+    <nav className={styles.root}>
       <Link className={styles.homeLink} to="/">
         Thomas Woodcock <span className={styles.visuallyHidden}>Home</span>
       </Link>
@@ -24,7 +24,7 @@ const NavBar = ({ links = [] }) => {
             className={styles.menuButton}
             onClick={() => setExpanded((exp) => !exp)}
           >
-            <svg viewBox="0 0 100 100">
+            <svg className={styles.icon} viewBox="0 0 100 100">
               <path
                 d="M3,7 95,7 M3,50 95,50 M3,92 93,93"
                 fill="none"
@@ -35,9 +35,9 @@ const NavBar = ({ links = [] }) => {
             </svg>
             Menu
           </button>
-          <ul>
+          <ul className={styles.linkList}>
             {links.map((link, index) => (
-              <li key={index}>
+              <li className={styles.linkListItem} key={index}>
                 <Link to={link.url}>{link.title}</Link>
               </li>
             ))}
