@@ -4,10 +4,10 @@
   composes: centralized from "../../styles/display.css";
 }
 
-.link {
-  margin-top: size0;
+.heading {
+  font-size: size5;
 }
 
-.root > h1 {
-  font-size: size5;
+.link {
+  margin-top: size0;
 }

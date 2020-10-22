@@ -4,10 +4,11 @@
   composes: centralized from "../../styles/display.css";
 }
 
-.root > h1 {
-  font-size: size5;
-}
-
 .button {
   composes: default from "../../styles/buttons.css";
+  margin-top: size1;
+}
+
+.heading {
+  font-size: size5;
 }

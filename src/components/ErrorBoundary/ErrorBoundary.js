@@ -22,7 +22,9 @@ class ErrorBoundary extends React.Component {
     if (this.state.hasError) {
       return (
         <div className={styles.root}>
-          <Heading level={1}>Error</Heading>
+          <Heading className={styles.heading} level={1}>
+            Error
+          </Heading>
           <Heading level={2}>Something went wrong.</Heading>
           <button className={styles.button} onClick={this.reset}>
             Reload

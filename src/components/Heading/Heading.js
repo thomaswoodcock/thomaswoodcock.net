@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import clsx from "clsx";
 
 import styles from "./Heading.module.css";
 
@@ -12,14 +13,17 @@ const levels = {
   6: ["h6", styles.level6],
 };
 
-const Heading = ({ children, level = 1 }) => {
+const Heading = ({ children, className, level = 1 }) => {
   const [Component, levelClass] = levels[level] || levels[1];
 
-  return <Component className={levelClass}>{children}</Component>;
+  return (
+    <Component className={clsx(levelClass, className)}>{children}</Component>
+  );
 };
 
 Heading.propTypes = {
   children: PropTypes.node.isRequired,
+  className: PropTypes.string,
   level: PropTypes.oneOf([1, 2, 3, 4, 5, 6]),
 };
 
