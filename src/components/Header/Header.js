@@ -1,17 +1,16 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import Container from "../Container";
 import Heading from "../Heading";
 
 import styles from "./Header.module.css";
 
 const Header = ({ subtitle, title }) => (
-  <header className={styles.Header}>
-    <Container>
+  <header className={styles.root}>
+    <div className={styles.container}>
       <Heading level={1}>{title}</Heading>
       {subtitle && <p>{subtitle}</p>}
-    </Container>
+    </div>
   </header>
 );
 

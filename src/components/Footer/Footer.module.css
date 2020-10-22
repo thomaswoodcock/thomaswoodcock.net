@@ -1,6 +1,10 @@
 @value size3 from "../../styles/sizing.css";
 
-.Footer {
+.root {
   padding: size3;
   text-align: center;
+}
+
+.container {
+  composes: contained from "../../styles/display.css";
 }

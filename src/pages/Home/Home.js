@@ -1,9 +1,10 @@
 import React from "react";
 
-import Container from "../../components/Container";
 import Header from "../../components/Header";
 import Heading from "../../components/Heading";
 import Paragraph from "../../components/Paragraph";
+
+import styles from "./Home.module.css";
 
 const Home = () => (
   <>
@@ -11,7 +12,7 @@ const Home = () => (
       subtitle="This is my personal website project."
       title="Thomas Woodcock"
     />
-    <Container>
+    <div className={styles.container}>
       <article>
         <Heading level={2}>Hello</Heading>
         <Paragraph>
@@ -26,7 +27,7 @@ const Home = () => (
           and then to see how it's progressing!`}
         </Paragraph>
       </article>
-    </Container>
+    </div>
   </>
 );
 

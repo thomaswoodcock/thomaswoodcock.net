@@ -1,18 +1,22 @@
 @value size1, size3, sizeM3 from "../../styles/sizing.css";
 
-.Header {
+.root {
   composes: inverted from "../../styles/colors.css";
   margin-bottom: size3;
   padding-bottom: size1;
   padding-top: size1;
 }
 
-.Header p {
+.root p {
   margin-top: sizeM3;
 }
 
+.container {
+  composes: contained from "../../styles/display.css";
+}
+
 @media (max-width: 600px) {
-  .Header h1 {
+  .root h1 {
     font-size: size3;
   }
 }

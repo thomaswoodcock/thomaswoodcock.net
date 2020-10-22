@@ -1,3 +1,6 @@
+@value size2 from "./sizing.css";
+
+/* Horizontally- and vertically-centred within its parent */
 .centralized {
   align-items: center;
   display: flex;
@@ -7,6 +10,16 @@
   text-align: center;
 }
 
+/* Horizontally-centred and width-restricted */
+.contained {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 35rem;
+  padding-left: size2;
+  padding-right: size2;
+}
+
+/* Hidden from view but available to screen readers */
 .visuallyHidden {
   clip-path: inset(100%) !important;
   clip: rect(1px, 1px, 1px, 1px) !important;
