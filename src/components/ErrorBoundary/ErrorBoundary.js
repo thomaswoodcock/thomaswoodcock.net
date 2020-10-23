@@ -1,11 +1,11 @@
-import React from "react";
+import { Component } from "react";
 import PropTypes from "prop-types";
 
 import Heading from "../Heading";
 
 import styles from "./ErrorBoundary.module.css";
 
-class ErrorBoundary extends React.Component {
+class ErrorBoundary extends Component {
   state = {
     hasError: false,
   };
