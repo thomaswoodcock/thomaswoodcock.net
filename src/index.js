@@ -1,16 +1,16 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import { StrictMode } from "react";
+import { render } from "react-dom";
 import { HashRouter } from "react-router-dom";
 
 import "./index.css";
 
 import App from "./containers/App";
 
-ReactDOM.render(
-  <React.StrictMode>
+render(
+  <StrictMode>
     <HashRouter basename="/">
       <App />
     </HashRouter>
-  </React.StrictMode>,
+  </StrictMode>,
   document.getElementById("root")
 );
