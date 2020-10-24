@@ -5,7 +5,6 @@
 }
 
 .button {
-  composes: default from "../../styles/buttons.css";
   margin-top: size1;
 }
 
