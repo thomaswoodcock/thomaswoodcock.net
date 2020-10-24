@@ -21,6 +21,8 @@
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "eslint-config-prettier": "^6.14.0",
+    "eslint-plugin-jest-dom": "^3.2.3",
+    "eslint-plugin-testing-library": "^3.9.2",
     "husky": "^4.3.0",
     "prettier": "^2.1.2",
     "pretty-quick": "^3.1.0"
@@ -33,8 +35,10 @@
       "react-app",
       "eslint:recommended",
       "plugin:import/errors",
+      "plugin:jest-dom/recommended",
       "plugin:react/recommended",
       "plugin:jsx-a11y/recommended",
+      "plugin:testing-library/react",
       "prettier",
       "prettier/react"
     ]
