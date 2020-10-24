@@ -1,4 +1,4 @@
-import { lazy, Suspense } from "react";
+import React, { lazy, Suspense } from "react";
 import { Redirect, Route, Switch } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 
