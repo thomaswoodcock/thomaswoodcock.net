@@ -2,6 +2,24 @@ const COLOR_DARK = "#252525";
 const COLOR_LIGHT = "#F5F5F5";
 
 export default {
+  breakpoints: {
+    xs: {
+      min: 0,
+      max: 600,
+    },
+    sm: {
+      min: 601,
+      max: 1024,
+    },
+    md: {
+      min: 1025,
+      max: 1440,
+    },
+    lg: {
+      min: 1441,
+      max: 1920,
+    },
+  },
   colors: {
     background: {
       primary: COLOR_LIGHT,

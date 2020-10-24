@@ -19,6 +19,13 @@ export default (theme = {}) => {
 
   return {
     ...combinedTheme,
+    breakpoints: {
+      ...combinedTheme.breakpoints,
+      down: (breakpoint) =>
+        `@media (max-width: ${combinedTheme.breakpoints[breakpoint].max}px)`,
+      up: (breakpoint) =>
+        `@media (min-width: ${combinedTheme.breakpoints[breakpoint].min}px)`,
+    },
     sizing: {
       ...combinedTheme.sizing,
       getSize: (size) => getSize(combinedTheme, size),
