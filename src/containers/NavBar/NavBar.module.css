@@ -24,7 +24,6 @@
 }
 
 .menuButton {
-  composes: default from "../../styles/buttons.css";
   display: none;
 }
 
