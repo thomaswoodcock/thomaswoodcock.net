@@ -1,8 +1,9 @@
 import React from "react";
-import { fireEvent, render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { createMemoryHistory } from "history";
 import { Router } from "react-router-dom";
+
+import { fireEvent, render, screen } from "../../utilities/testing";
 
 import NavBar from "./NavBar";
 

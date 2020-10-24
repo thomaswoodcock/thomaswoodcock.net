@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { Link, useLocation } from "react-router-dom";
 
+import Button from "../../components/Button";
+
 import styles from "./NavBar.module.css";
 
 const NavBar = ({ links = [] }) => {
@@ -19,7 +21,7 @@ const NavBar = ({ links = [] }) => {
       </Link>
       {links.length > 0 && (
         <>
-          <button
+          <Button
             aria-expanded={expanded}
             className={styles.menuButton}
             onClick={() => setExpanded((exp) => !exp)}
@@ -34,7 +36,7 @@ const NavBar = ({ links = [] }) => {
               />
             </svg>
             Menu
-          </button>
+          </Button>
           <ul className={styles.linkList}>
             {links.map((link, index) => (
               <li className={styles.linkListItem} key={index}>

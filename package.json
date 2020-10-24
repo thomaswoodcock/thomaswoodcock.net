@@ -9,7 +9,9 @@
     "eject": "react-scripts eject"
   },
   "dependencies": {
+    "@emotion/core": "^10.0.35",
     "clsx": "^1.1.1",
+    "emotion-theming": "^10.0.27",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0",
@@ -21,9 +23,11 @@
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "eslint-config-prettier": "^6.14.0",
+    "eslint-plugin-emotion": "^10.0.27",
     "eslint-plugin-jest-dom": "^3.2.3",
     "eslint-plugin-testing-library": "^3.9.2",
     "husky": "^4.3.0",
+    "jest-emotion": "^10.0.32",
     "prettier": "^2.1.2",
     "pretty-quick": "^3.1.0"
   },
@@ -41,12 +45,23 @@
       "plugin:testing-library/react",
       "prettier",
       "prettier/react"
-    ]
+    ],
+    "plugins": [
+      "emotion"
+    ],
+    "rules": {
+      "emotion/jsx-import": "error"
+    }
   },
   "husky": {
     "hooks": {
       "pre-commit": "pretty-quick --staged"
     }
+  },
+  "jest": {
+    "snapshotSerializers": [
+      "jest-emotion"
+    ]
   },
   "prettier": {}
 }
