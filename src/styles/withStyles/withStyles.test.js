@@ -70,4 +70,46 @@ describe("withStyles()", () => {
       screen.getByText(defaultTheme.colors.background.primary)
     ).toBeInTheDocument();
   });
+
+  it("forwards ref using default theme", () => {
+    // Arrange
+    class Component extends React.Component {
+      render() {
+        return this.props.styles.backgroundColor;
+      }
+    }
+
+    const ComponentWithStyles = withStyles({ backgroundColor: "black" })(
+      Component
+    );
+
+    const ref = React.createRef();
+
+    // Act
+    render(<ComponentWithStyles ref={ref} />);
+
+    // Assert
+    expect(ref.current instanceof Component).toBe(true);
+  });
+
+  it("forwards ref using ThemeProvider", () => {
+    // Arrange
+    class Component extends React.Component {
+      render() {
+        return this.props.styles.backgroundColor;
+      }
+    }
+
+    const ComponentWithStyles = withStyles({ backgroundColor: "black" })(
+      Component
+    );
+
+    const ref = React.createRef();
+
+    // Act
+    render(<ComponentWithStyles ref={ref} />, { wrapper });
+
+    // Assert
+    expect(ref.current instanceof Component).toBe(true);
+  });
 });

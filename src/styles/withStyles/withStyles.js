@@ -8,13 +8,13 @@ const withStyles = (styles) => {
   return (component) => {
     const Component = component;
 
-    const WithStyles = (props, ref) => {
+    const WithStyles = React.forwardRef(function WithStyles(props, ref) {
       const styles = useStyles();
 
       return <Component styles={styles} ref={ref} {...props} />;
-    };
+    });
 
-    return React.forwardRef(WithStyles);
+    return WithStyles;
   };
 };
 
