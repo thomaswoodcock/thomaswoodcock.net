@@ -10,9 +10,9 @@ import { createStyles } from "../../styles";
 
 const useStyles = createStyles((theme) => ({
   button: {
-    display: "none",
-    [theme.breakpoints.down("xs")]: {
-      width: "100%",
+    width: "100%",
+    [theme.breakpoints.up("sm")]: {
+      display: "none",
     },
   },
   home: {
