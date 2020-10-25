@@ -1,15 +1,5 @@
 @value size2 from "./sizing.css";
 
-/* Horizontally- and vertically-centred within its parent */
-.centralized {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  justify-content: center;
-  text-align: center;
-}
-
 /* Hidden from view but available to screen readers */
 .visuallyHidden {
   clip-path: inset(100%) !important;
