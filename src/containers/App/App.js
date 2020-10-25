@@ -25,6 +25,15 @@ const useStyles = createStyles((theme) => ({
       fontSize: "calc(0.333vw + 1em)",
       lineHeight: theme.sizing.ratio,
     },
+    ".visually-hidden": {
+      clipPath: "inset(100%) !important",
+      clip: "rect(1px, 1px, 1px, 1px) !important",
+      height: "1px !important",
+      overflow: "hidden !important",
+      position: "absolute !important",
+      whiteSpace: "nowrap !important",
+      width: "1px !important",
+    },
   },
   main: {
     flex: 1,
@@ -58,7 +67,7 @@ const App = () => {
               <Route>
                 <SkipLink />
                 <NavBar links={[]} />
-                <main className={styles.main} id="main">
+                <main css={styles.main} id="main">
                   <Suspense fallback={<Spinner />}>
                     <Switch>
                       <Route component={Home} exact path="/" />

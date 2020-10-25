@@ -1,32 +1,85 @@
-import React, { useEffect, useState } from "react";
+/** @jsx jsx */
+import { jsx } from "@emotion/core";
+import { Fragment, useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { Link, useLocation } from "react-router-dom";
 
 import Button from "../../components/Button";
 
-import styles from "./NavBar.module.css";
+import { createStyles } from "../../styles";
+
+const useStyles = createStyles((theme) => ({
+  button: {
+    display: "none",
+    [theme.breakpoints.down("xs")]: {
+      width: "100%",
+    },
+  },
+  home: {
+    fontFamily: theme.typography.serif,
+    textDecoration: "none",
+  },
+  icon: {
+    [theme.breakpoints.down("xs")]: {
+      height: "0.75rem",
+      marginRight: theme.sizing.getSize(-3),
+      width: "0.75rem",
+    },
+  },
+  nav: {
+    display: "flex",
+    flexGrow: 1,
+    [theme.breakpoints.down("xs")]: {
+      alignItems: "center",
+      flexDirection: "column",
+      "[aria-expanded='false'] + &": {
+        display: "none",
+      },
+    },
+  },
+  navItem: {
+    display: "inline-block",
+    marginLeft: theme.sizing.getSize(-1),
+    marginRight: theme.sizing.getSize(-1),
+    [theme.breakpoints.down("xs")]: {
+      display: "block",
+      marginBottom: theme.sizing.getSize(-2),
+      marginTop: theme.sizing.getSize(-2),
+    },
+  },
+  root: {
+    display: "flex",
+    listStyle: "none",
+    padding: theme.sizing.getSize(-1),
+    [theme.breakpoints.down("xs")]: {
+      alignItems: "center",
+      flexDirection: "column",
+    },
+  },
+}));
 
 const NavBar = ({ links = [] }) => {
   const [expanded, setExpanded] = useState(false);
   const location = useLocation();
+  const styles = useStyles();
 
   useEffect(() => {
     setExpanded(false);
   }, [location]);
 
   return (
-    <nav className={styles.root}>
-      <Link className={styles.homeLink} to="/">
-        Thomas Woodcock <span className={styles.visuallyHidden}>Home</span>
+    <nav css={styles.root}>
+      <Link css={[styles.navItem, styles.home]} to="/">
+        Thomas Woodcock <span className="visually-hidden">Home</span>
       </Link>
       {links.length > 0 && (
-        <>
+        <Fragment>
           <Button
             aria-expanded={expanded}
-            className={styles.menuButton}
+            css={[styles.navItem, styles.button]}
             onClick={() => setExpanded((exp) => !exp)}
           >
-            <svg className={styles.icon} viewBox="0 0 100 100">
+            <svg css={styles.icon} viewBox="0 0 100 100">
               <path
                 d="M3,7 95,7 M3,50 95,50 M3,92 93,93"
                 fill="none"
@@ -37,14 +90,14 @@ const NavBar = ({ links = [] }) => {
             </svg>
             Menu
           </Button>
-          <ul className={styles.linkList}>
+          <ul css={styles.nav}>
             {links.map((link, index) => (
-              <li className={styles.linkListItem} key={index}>
+              <li css={styles.navItem} key={index}>
                 <Link to={link.url}>{link.title}</Link>
               </li>
             ))}
           </ul>
-        </>
+        </Fragment>
       )}
     </nav>
   );
