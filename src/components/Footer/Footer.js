@@ -1,18 +1,30 @@
-import React from "react";
+/** @jsx jsx */
+import { jsx } from "@emotion/core";
 
-import styles from "./Footer.module.css";
+import Box from "../Box";
 
-const Footer = () => (
-  <footer className={styles.root}>
-    <div className={styles.container}>
-      <p>
-        <small>
-          &copy; <a href="https://github.com/thomaswoodcock">Thomas Woodcock</a>{" "}
-          2020
-        </small>
-      </p>
-    </div>
-  </footer>
-);
+import { createStyles } from "../../styles";
+
+const useStyles = createStyles((theme) => ({
+  padding: theme.sizing.getSize(3),
+  textAlign: "center",
+}));
+
+const Footer = () => {
+  const styles = useStyles();
+
+  return (
+    <footer css={styles}>
+      <Box variant="contained">
+        <p>
+          <small>
+            &copy;{" "}
+            <a href="https://github.com/thomaswoodcock">Thomas Woodcock</a> 2020
+          </small>
+        </p>
+      </Box>
+    </footer>
+  );
+};
 
 export default Footer;

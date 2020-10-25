@@ -1,20 +1,46 @@
-import React from "react";
+/** @jsx jsx */
+import { jsx } from "@emotion/core";
 import PropTypes from "prop-types";
 
+import Box from "../Box";
 import Heading from "../Heading";
 
-import styles from "./Header.module.css";
+import { createStyles } from "../../styles";
 
-const Header = ({ subtitle, title }) => (
-  <header className={styles.root}>
-    <div className={styles.container}>
-      <Heading className={styles.heading} level={1}>
-        {title}
-      </Heading>
-      {subtitle && <p className={styles.subtitle}>{subtitle}</p>}
-    </div>
-  </header>
-);
+const useStyles = createStyles((theme) => ({
+  heading: {
+    [theme.breakpoints.down("xs")]: {
+      fontSize: theme.sizing.getSize(3),
+    },
+  },
+  root: {
+    backgroundColor: theme.colors.background.secondary,
+    borderColor: theme.colors.border.secondary,
+    color: theme.colors.typography.secondary,
+    marginBottom: theme.sizing.getSize(3),
+    outlineColor: theme.colors.border.secondary,
+    paddingBottom: theme.sizing.getSize(1),
+    paddingTop: theme.sizing.getSize(1),
+  },
+  subtitle: {
+    marginTop: theme.sizing.getSize(-3),
+  },
+}));
+
+const Header = ({ subtitle, title }) => {
+  const styles = useStyles();
+
+  return (
+    <header css={styles.root}>
+      <Box variant="contained">
+        <Heading css={styles.heading} level={1}>
+          {title}
+        </Heading>
+        {subtitle && <p css={styles.subtitle}>{subtitle}</p>}
+      </Box>
+    </header>
+  );
+};
 
 Header.propTypes = {
   subtitle: PropTypes.string,
