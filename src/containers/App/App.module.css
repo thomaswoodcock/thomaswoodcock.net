@@ -23,18 +23,3 @@
 .main {
   flex: 1;
 }
-
-.skip {
-  composes: inverted from "../../styles/colors.css";
-  display: inline-block;
-  padding: sizeM1;
-  position: absolute;
-  top: -10rem;
-}
-
-.skip:focus {
-  outline: none;
-  position: absolute;
-  top: 0;
-  z-index: 1;
-}
