@@ -1,4 +1,4 @@
-import defaultTheme from "./default";
+import defaultTheme from "./defaultTheme";
 
 const getSize = (theme, size) => {
   if (size === 0) {
