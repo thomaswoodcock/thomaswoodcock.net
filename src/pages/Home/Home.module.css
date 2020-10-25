@@ -1,9 +1,0 @@
-@value size0 from "../../styles/sizing.css";
-
-.container {
-  composes: contained from "../../styles/display.css";
-}
-
-.content * + * {
-  margin-top: size0;
-}

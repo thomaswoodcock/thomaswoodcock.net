@@ -1,12 +1,24 @@
-import React from "react";
+/** @jsx jsx */
+import { jsx } from "@emotion/core";
+import { Component } from "react";
 import PropTypes from "prop-types";
 
+import Box from "../Box";
 import Button from "../Button";
 import Heading from "../Heading";
 
-import styles from "./ErrorBoundary.module.css";
+import { withStyles } from "../../styles";
 
-class ErrorBoundary extends React.Component {
+const styles = (theme) => ({
+  button: {
+    marginTop: theme.sizing.getSize(1),
+  },
+  heading: {
+    fontSize: theme.sizing.getSize(5),
+  },
+});
+
+class ErrorBoundary extends Component {
   state = {
     hasError: false,
   };
@@ -22,15 +34,15 @@ class ErrorBoundary extends React.Component {
   render() {
     if (this.state.hasError) {
       return (
-        <div className={styles.root}>
-          <Heading className={styles.heading} level={1}>
+        <Box variant="centralized">
+          <Heading css={this.props.styles.heading} level={1}>
             Error
           </Heading>
           <Heading level={2}>Something went wrong.</Heading>
-          <Button className={styles.button} onClick={this.reset}>
+          <Button css={this.props.styles.button} onClick={this.reset}>
             Reload
           </Button>
-        </div>
+        </Box>
       );
     }
 
@@ -40,6 +52,10 @@ class ErrorBoundary extends React.Component {
 
 ErrorBoundary.propTypes = {
   children: PropTypes.node.isRequired,
+  styles: PropTypes.shape({
+    button: PropTypes.object,
+    heading: PropTypes.object,
+  }),
 };
 
-export default ErrorBoundary;
+export default withStyles(styles)(ErrorBoundary);

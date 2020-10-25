@@ -1,48 +1,88 @@
-import React, { lazy, Suspense } from "react";
+/** @jsx jsx */
+import { Global, jsx } from "@emotion/core";
+import { lazy, Suspense } from "react";
 import { ThemeProvider } from "emotion-theming";
 import { Redirect, Route, Switch } from "react-router-dom";
-import { HashLink } from "react-router-hash-link";
 
 import ErrorBoundary from "../../components/ErrorBoundary";
 import Footer from "../../components/Footer";
 import NavBar from "../NavBar";
+import SkipLink from "../../components/SkipLink";
 import Spinner from "../../components/Spinner";
 
-import styles from "./App.module.css";
-import { createTheme } from "../../themes";
+import { createStyles, createTheme } from "../../styles";
+
+const theme = createTheme();
+
+const useStyles = createStyles((theme) => ({
+  global: {
+    "&:focus": {
+      outlineOffset: theme.sizing.getSize(-5),
+      outlineStyle: "solid",
+      outlineWidth: theme.sizing.getSize(-5),
+    },
+    "&:root": {
+      fontSize: "calc(0.333vw + 1em)",
+      lineHeight: theme.sizing.ratio,
+    },
+    ".visually-hidden": {
+      clipPath: "inset(100%) !important",
+      clip: "rect(1px, 1px, 1px, 1px) !important",
+      height: "1px !important",
+      overflow: "hidden !important",
+      position: "absolute !important",
+      whiteSpace: "nowrap !important",
+      width: "1px !important",
+    },
+  },
+  main: {
+    flex: 1,
+  },
+  root: {
+    backgroundColor: theme.colors.background.primary,
+    borderColor: theme.colors.border.primary,
+    color: theme.colors.typography.primary,
+    display: "flex",
+    flexDirection: "column",
+    fontFamily: theme.typography.sans,
+    height: "100vh",
+    outlineColor: theme.colors.border.primary,
+  },
+}));
 
 const Home = lazy(() => import("../../pages/Home"));
 const NotFound = lazy(() => import("../../pages/NotFound"));
 
-const theme = createTheme();
+const App = () => {
+  const styles = useStyles();
 
-const App = () => (
-  <ThemeProvider theme={theme}>
-    <div className={styles.root}>
-      <ErrorBoundary>
-        <Suspense fallback={<Spinner />}>
-          <Switch>
-            <Route component={NotFound} exact path="/404" />
-            <Route>
-              <HashLink className={styles.skip} to="#main">
-                Skip to content
-              </HashLink>
-              <NavBar links={[]} />
-              <main className={styles.main} id="main">
-                <Suspense fallback={<Spinner />}>
-                  <Switch>
-                    <Route component={Home} exact path="/" />
-                    <Route component={() => <Redirect to="/404" />} />
-                  </Switch>
-                </Suspense>
-              </main>
-              <Footer />
-            </Route>
-          </Switch>
-        </Suspense>
-      </ErrorBoundary>
-    </div>
-  </ThemeProvider>
-);
+  return (
+    <ThemeProvider theme={theme}>
+      <Global styles={styles.global} />
+      <div css={styles.root}>
+        <ErrorBoundary>
+          <Suspense fallback={<Spinner />}>
+            <Switch>
+              <Route component={NotFound} exact path="/404" />
+              <Route>
+                <SkipLink />
+                <NavBar links={[]} />
+                <main css={styles.main} id="main">
+                  <Suspense fallback={<Spinner />}>
+                    <Switch>
+                      <Route component={Home} exact path="/" />
+                      <Route component={() => <Redirect to="/404" />} />
+                    </Switch>
+                  </Suspense>
+                </main>
+                <Footer />
+              </Route>
+            </Switch>
+          </Suspense>
+        </ErrorBoundary>
+      </div>
+    </ThemeProvider>
+  );
+};
 
 export default App;
