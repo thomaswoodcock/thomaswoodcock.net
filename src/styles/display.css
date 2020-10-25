@@ -1,5 +1,3 @@
-@value size2 from "./sizing.css";
-
 /* Hidden from view but available to screen readers */
 .visuallyHidden {
   clip-path: inset(100%) !important;

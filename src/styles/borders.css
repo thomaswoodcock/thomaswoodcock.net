@@ -1,7 +1,0 @@
-@value sizeM5 from "./sizing.css";
-
-@value borderSize: sizeM5;
-
-.default {
-  border-width: borderSize;
-}
