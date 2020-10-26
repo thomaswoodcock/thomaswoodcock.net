@@ -4,6 +4,15 @@ import PropTypes from "prop-types";
 
 import { createStyles } from "../../styles";
 
+const levels = {
+  1: "h1",
+  2: "h2",
+  3: "h3",
+  4: "h4",
+  5: "h5",
+  6: "h6",
+};
+
 const useStyles = createStyles((theme) => ({
   h1: {
     fontSize: theme.sizing.getSize(4),
@@ -30,15 +39,6 @@ const useStyles = createStyles((theme) => ({
     lineHeight: `calc(0.8 * ${theme.sizing.ratio})`,
   },
 }));
-
-const levels = {
-  1: "h1",
-  2: "h2",
-  3: "h3",
-  4: "h4",
-  5: "h5",
-  6: "h6",
-};
 
 const Heading = ({ children, level = 1, ...props }) => {
   const styles = useStyles();
