@@ -32,21 +32,19 @@ class ErrorBoundary extends Component {
   };
 
   render() {
-    if (this.state.hasError) {
-      return (
-        <Box variant="centralized">
-          <Heading css={this.props.styles.heading} level={1}>
-            Error
-          </Heading>
-          <Heading level={2}>Something went wrong.</Heading>
-          <Button css={this.props.styles.button} onClick={this.reset}>
-            Reload
-          </Button>
-        </Box>
-      );
-    }
-
-    return this.props.children;
+    return this.state.hasError ? (
+      <Box variant="centralized">
+        <Heading css={this.props.styles.heading} level={1}>
+          Error
+        </Heading>
+        <Heading level={2}>Something went wrong.</Heading>
+        <Button css={this.props.styles.button} onClick={this.reset}>
+          Reload
+        </Button>
+      </Box>
+    ) : (
+      this.props.children
+    );
   }
 }
 
