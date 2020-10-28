@@ -1,6 +1,5 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core";
-import PropTypes from "prop-types";
 
 import Box from "../Box";
 import Heading from "../Heading";
@@ -27,7 +26,12 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-const Header = ({ subtitle, title }) => {
+interface HeaderProps {
+  subtitle?: string;
+  title: string;
+}
+
+const Header = ({ subtitle, title }: HeaderProps) => {
   const styles = useStyles();
 
   return (
@@ -40,11 +44,6 @@ const Header = ({ subtitle, title }) => {
       </Box>
     </header>
   );
-};
-
-Header.propTypes = {
-  subtitle: PropTypes.string,
-  title: PropTypes.string.isRequired,
 };
 
 export default Header;
