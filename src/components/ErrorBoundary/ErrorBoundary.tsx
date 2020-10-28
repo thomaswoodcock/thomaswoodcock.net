@@ -1,7 +1,6 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core";
 import { Component } from "react";
-import PropTypes from "prop-types";
 
 import Box from "../Box";
 import Button from "../Button";
@@ -18,7 +17,11 @@ const styles = createStyles((theme) => ({
   },
 }));
 
-class ErrorBoundary extends Component {
+interface ErrorBoundaryProps {
+  styles: any;
+}
+
+class ErrorBoundary extends Component<ErrorBoundaryProps> {
   state = {
     hasError: false,
   };
@@ -47,13 +50,5 @@ class ErrorBoundary extends Component {
     );
   }
 }
-
-ErrorBoundary.propTypes = {
-  children: PropTypes.node.isRequired,
-  styles: PropTypes.shape({
-    button: PropTypes.object,
-    heading: PropTypes.object,
-  }),
-};
 
 export default withStyles(styles)(ErrorBoundary);

@@ -1,7 +1,6 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core";
 import { Fragment, useEffect, useState } from "react";
-import PropTypes from "prop-types";
 import { Link, useLocation } from "react-router-dom";
 
 import Button from "../../components/Button";
@@ -58,7 +57,14 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-const NavBar = ({ links = [] }) => {
+interface NavBarProps {
+  links?: {
+    title: string;
+    url: string;
+  }[];
+}
+
+const NavBar = ({ links = [] }: NavBarProps) => {
   const [expanded, setExpanded] = useState(false);
   const location = useLocation();
   const styles = useStyles();
@@ -101,15 +107,6 @@ const NavBar = ({ links = [] }) => {
       )}
     </nav>
   );
-};
-
-NavBar.propTypes = {
-  links: PropTypes.arrayOf(
-    PropTypes.shape({
-      title: PropTypes.string.isRequired,
-      url: PropTypes.string.isRequired,
-    })
-  ),
 };
 
 export default NavBar;

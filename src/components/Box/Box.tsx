@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core";
-import PropTypes from "prop-types";
+import { DetailedHTMLProps, HTMLAttributes } from "react";
 
 import { createStyles } from "../../styles";
 
@@ -22,7 +22,12 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-const Box = ({ children, variant, ...props }) => {
+interface BoxProps
+  extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
+  variant?: "centralized" | "contained";
+}
+
+const Box = ({ children, variant, ...props }: BoxProps) => {
   const styles = useStyles();
 
   return (
@@ -30,11 +35,6 @@ const Box = ({ children, variant, ...props }) => {
       {children}
     </div>
   );
-};
-
-Box.propTypes = {
-  children: PropTypes.node.isRequired,
-  variant: PropTypes.oneOf(["centralized", "contained"]),
 };
 
 export default Box;
