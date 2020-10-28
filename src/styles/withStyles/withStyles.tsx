@@ -10,9 +10,7 @@ import { Theme } from "../createTheme/types";
  */
 const withStyles = <T extends Partial<InterpolationWithTheme<Theme>>>(
   useStyles: () => T
-): ((
-  component: React.ElementType
-) => React.ForwardRefExoticComponent<React.RefAttributes<any>>) => {
+): ((component: React.ElementType) => React.ElementType) => {
   return (component) => {
     const Component = component;
 
