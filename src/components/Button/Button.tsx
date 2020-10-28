@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core";
-import PropTypes from "prop-types";
+import { ButtonHTMLAttributes, DetailedHTMLProps } from "react";
 
 import { createStyles } from "../../styles";
 
@@ -18,19 +18,20 @@ const useStyles = createStyles((theme) => ({
   padding: `${theme.sizing.getSize(-2)} ${theme.sizing.getSize(1)}`,
 }));
 
-const Button = ({ children, onClick, ...props }) => {
+interface ButtonProps
+  extends DetailedHTMLProps<
+    ButtonHTMLAttributes<HTMLButtonElement>,
+    HTMLButtonElement
+  > {}
+
+const Button = ({ children, ...props }: ButtonProps) => {
   const styles = useStyles();
 
   return (
-    <button css={styles} onClick={onClick} {...props}>
+    <button css={styles} {...props}>
       {children}
     </button>
   );
-};
-
-Button.propTypes = {
-  children: PropTypes.node,
-  onClick: PropTypes.func.isRequired,
 };
 
 export default Button;
