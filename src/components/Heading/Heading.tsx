@@ -1,10 +1,12 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core";
-import PropTypes from "prop-types";
+import { DetailedHTMLProps, HTMLAttributes } from "react";
 
 import { createStyles } from "../../styles";
 
-const levels = {
+type HeadingVariant = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+
+const levels: Record<number, HeadingVariant> = {
   1: "h1",
   2: "h2",
   3: "h3",
@@ -40,7 +42,15 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-const Heading = ({ children, level = 1, ...props }) => {
+interface HeadingProps
+  extends DetailedHTMLProps<
+    HTMLAttributes<HTMLHeadingElement>,
+    HTMLHeadingElement
+  > {
+  level?: 1 | 2 | 3 | 4 | 5 | 6;
+}
+
+const Heading = ({ children, level = 1, ...props }: HeadingProps) => {
   const styles = useStyles();
 
   const Component = levels[level] || levels[1];
@@ -53,11 +63,6 @@ const Heading = ({ children, level = 1, ...props }) => {
       {children}
     </Component>
   );
-};
-
-Heading.propTypes = {
-  children: PropTypes.node.isRequired,
-  level: PropTypes.oneOf([1, 2, 3, 4, 5, 6]),
 };
 
 export default Heading;
