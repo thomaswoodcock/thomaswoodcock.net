@@ -7,7 +7,7 @@ import createStyles from "./createStyles";
 import defaultTheme from "../createTheme/defaultTheme";
 
 describe("createStyles()", () => {
-  const wrapper = ({ children }) => (
+  const wrapper: React.FC = ({ children }) => (
     <ThemeProvider theme={{ colors: { background: { primary: "red" } } }}>
       {children}
     </ThemeProvider>

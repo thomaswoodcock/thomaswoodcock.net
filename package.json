@@ -22,7 +22,11 @@
     "@testing-library/react": "^11.1.0",
     "@testing-library/react-hooks": "^3.4.2",
     "@testing-library/user-event": "^12.1.10",
-    "eslint-config-prettier": "^6.14.0",
+    "@types/jest": "^26.0.15",
+    "@types/node": "^14.14.5",
+    "@types/react": "^16.9.54",
+    "@types/react-dom": "^16.9.9",
+    "eslint-config-prettier": "^6.15.0",
     "eslint-plugin-emotion": "^10.0.27",
     "eslint-plugin-jest-dom": "^3.2.4",
     "eslint-plugin-testing-library": "^3.9.2",
@@ -30,7 +34,8 @@
     "jest-emotion": "^10.0.32",
     "prettier": "^2.1.2",
     "pretty-quick": "^3.1.0",
-    "react-test-renderer": "^17.0.1"
+    "react-test-renderer": "^17.0.1",
+    "typescript": "^4.0.5"
   },
   "browserslist": [
     "defaults"
@@ -40,6 +45,7 @@
       "react-app",
       "eslint:recommended",
       "plugin:import/errors",
+      "plugin:import/typescript",
       "plugin:jest-dom/recommended",
       "plugin:react/recommended",
       "plugin:jsx-a11y/recommended",

@@ -1,7 +1,9 @@
+import { ThemeBase } from "./types";
+
 const COLOR_DARK = "#252525";
 const COLOR_LIGHT = "#F5F5F5";
 
-export default {
+const defaultTheme: ThemeBase = {
   breakpoints: {
     xs: {
       min: 0,
@@ -44,3 +46,5 @@ export default {
     special: '"Exo", Arial, Helvetica, sans-serif',
   },
 };
+
+export default defaultTheme;

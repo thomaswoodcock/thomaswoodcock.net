@@ -7,16 +7,16 @@ import Box from "../Box";
 import Button from "../Button";
 import Heading from "../Heading";
 
-import { withStyles } from "../../styles";
+import { createStyles, withStyles } from "../../styles";
 
-const styles = (theme) => ({
+const styles = createStyles((theme) => ({
   button: {
     marginTop: theme.sizing.getSize(1),
   },
   heading: {
     fontSize: theme.sizing.getSize(5),
   },
-});
+}));
 
 class ErrorBoundary extends Component {
   state = {
