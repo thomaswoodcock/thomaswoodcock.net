@@ -7,14 +7,14 @@ import { Router } from "react-router-dom";
 import NavBar from "./NavBar";
 
 describe("<NavBar />", () => {
-  let innerWidth;
+  let innerWidth: number;
 
   beforeAll(() => {
     ({ innerWidth } = window);
   });
 
   afterEach(() => {
-    window.innerWidth = innerWidth;
+    window! = Object.assign(window, { innerWidth });
   });
 
   it("renders links when provided", () => {
@@ -42,7 +42,7 @@ describe("<NavBar />", () => {
     // Arrange
     const history = createMemoryHistory();
 
-    window.innerWidth = 600;
+    window! = Object.assign(window, { innerWidth: 600 });
     fireEvent(window, new Event("resize"));
 
     // Act Assert
