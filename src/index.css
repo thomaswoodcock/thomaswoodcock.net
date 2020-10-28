@@ -11,6 +11,16 @@
   padding: 0;
 }
 
+.visually-hidden {
+  clip-path: "inset(100%) !important";
+  clip: "rect(1px, 1px, 1px, 1px) !important";
+  height: "1px !important";
+  overflow: "hidden !important";
+  position: "absolute !important";
+  white-space: "nowrap !important";
+  width: "1px !important";
+}
+
 @media (prefers-reduced-motion: no-preference) {
   :root {
     scroll-behavior: smooth;
