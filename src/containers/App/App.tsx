@@ -1,6 +1,6 @@
-/** @jsx jsx */
-import { Global, jsx } from "@emotion/core";
-import { lazy, Suspense } from "react";
+/** @jsxImportSource @emotion/core */
+import React, { lazy, Suspense } from "react";
+import { Global } from "@emotion/core";
 import { ThemeProvider } from "emotion-theming";
 import { Redirect, Route, Switch } from "react-router-dom";
 

@@ -1,6 +1,5 @@
-/** @jsx jsx */
-import { jsx } from "@emotion/core";
-import { Fragment, useEffect, useState } from "react";
+/** @jsxImportSource @emotion/core */
+import React, { Fragment, useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 import Button from "../../components/Button";

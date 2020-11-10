@@ -1,5 +1,5 @@
-/** @jsx jsx */
-import { jsx } from "@emotion/core";
+/** @jsxImportSource @emotion/core */
+import React from "react";
 import { Link } from "react-router-dom";
 
 import Box from "../../components/Box";

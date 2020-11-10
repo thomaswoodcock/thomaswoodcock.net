@@ -1,5 +1,5 @@
-/** @jsx jsx */
-import { jsx } from "@emotion/core";
+/** @jsxImportSource @emotion/core */
+import React from "react";
 
 import Box from "../Box";
 import Heading from "../Heading";
