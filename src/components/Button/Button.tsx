@@ -1,6 +1,5 @@
-/** @jsx jsx */
-import { jsx } from "@emotion/core";
-import { ButtonHTMLAttributes, DetailedHTMLProps } from "react";
+/** @jsxImportSource @emotion/core */
+import React, { ButtonHTMLAttributes, DetailedHTMLProps } from "react";
 
 import { createStyles } from "../../styles";
 

@@ -5,7 +5,7 @@ import userEvent from "@testing-library/user-event";
 import ErrorBoundary from "./ErrorBoundary";
 
 describe("<ErrorBoundary />", () => {
-  let initialError;
+  let initialError: any;
 
   beforeAll(() => {
     initialError = console.error;
