@@ -14,7 +14,7 @@ const useStyles = createStyles((theme) => ({
   fontSize: "inherit",
   fontWeight: 700,
   outlineColor: theme.colors.border.primary,
-  padding: `${theme.sizing.getSize(-2)} ${theme.sizing.getSize(1)}`,
+  padding: theme.sizing.getSize(-2, 1),
 }));
 
 interface ButtonProps

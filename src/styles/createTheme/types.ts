@@ -67,7 +67,15 @@ export interface Theme extends ThemeBase {
   };
 
   sizing: ThemeBase["sizing"] & {
-    /** Calculates a size using the base ratio, unit, and given number. */
-    getSize: (size: number) => string;
+    getSize: {
+      /** Calculates a size using the base ratio, unit, and given number. */
+      (size: number): string;
+      /** Calculates a size using the base ratio, unit, and numbers for top and bottom, and left and right. */
+      (topBottom: number, leftRight: number): string;
+      /** Calculates a size using the base ratio, unit, and numbers for top, left and right, and bottom. */
+      (top: number, leftRight: number, bottom: number): string;
+      /** Calculates a size using the base ratio, unit, and numbers for top, right, bottom and left. */
+      (top: number, right: number, bottom: number, left: number): string;
+    };
   };
 }
