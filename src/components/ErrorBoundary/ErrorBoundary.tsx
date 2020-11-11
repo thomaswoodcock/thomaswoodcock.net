@@ -17,7 +17,7 @@ const styles = createStyles((theme) => ({
 }));
 
 interface ErrorBoundaryProps {
-  styles: any;
+  styles: ReturnType<typeof styles>;
 }
 
 class ErrorBoundary extends Component<ErrorBoundaryProps> {
