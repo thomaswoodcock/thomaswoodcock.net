@@ -2,16 +2,20 @@ import { Theme, ThemeBase } from "./types";
 
 import defaultTheme from "./defaultTheme";
 
-const getSize = (theme: ThemeBase, size: number) => {
-  if (size === 0) {
-    return theme.sizing.unit;
-  }
+const getSize = (theme: ThemeBase, args: number[]) =>
+  args
+    .slice(0, 3)
+    .map((size) => {
+      if (size === 0) {
+        return theme.sizing.unit;
+      }
 
-  const operator = size > 0 ? "*" : "/";
-  const operation = ` ${operator} ${theme.sizing.ratio}`;
+      const operator = size > 0 ? "*" : "/";
+      const operation = ` ${operator} ${theme.sizing.ratio}`;
 
-  return `calc(${theme.sizing.unit}${operation.repeat(Math.abs(size))})`;
-};
+      return `calc(${theme.sizing.unit}${operation.repeat(Math.abs(size))})`;
+    })
+    .join(" ");
 
 /**
  * Creates a theme, used to customize the page, by combining provided theme
@@ -39,7 +43,7 @@ const createTheme: (
     },
     sizing: {
       ...combinedTheme.sizing,
-      getSize: (size) => getSize(combinedTheme, size),
+      getSize: (...args: number[]) => getSize(combinedTheme, args),
     },
   };
 };
