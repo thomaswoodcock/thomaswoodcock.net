@@ -12,12 +12,14 @@ describe("<Spinner />", () => {
       @keyframes animation-0 {
         0% {
           -webkit-transform: rotate(0deg);
+          -moz-transform: rotate(0deg);
           -ms-transform: rotate(0deg);
           transform: rotate(0deg);
         }
 
         100% {
           -webkit-transform: rotate(360deg);
+          -moz-transform: rotate(360deg);
           -ms-transform: rotate(360deg);
           transform: rotate(360deg);
         }
@@ -37,8 +39,8 @@ describe("<Spinner />", () => {
         flex-direction: column;
         height: 100%;
         -webkit-box-pack: center;
-        -webkit-justify-content: center;
         -ms-flex-pack: center;
+        -webkit-justify-content: center;
         justify-content: center;
         text-align: center;
       }

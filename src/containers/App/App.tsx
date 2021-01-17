@@ -1,7 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import React, { lazy, Suspense } from "react";
-import { Global } from "@emotion/react";
-import { ThemeProvider } from "emotion-theming";
+import { Global, ThemeProvider } from "@emotion/react";
 import { Redirect, Route, Switch } from "react-router-dom";
 
 import ErrorBoundary from "../../components/ErrorBoundary";

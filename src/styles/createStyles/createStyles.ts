@@ -1,9 +1,7 @@
 import { useMemo } from "react";
-import { Interpolation } from "@emotion/react";
-import { useTheme } from "emotion-theming";
+import { Interpolation, Theme, useTheme } from "@emotion/react";
 
 import createTheme from "../createTheme";
-import { Theme } from "../createTheme/types";
 
 /**
  * Creates styles used for customizing a component.

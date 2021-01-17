@@ -1,16 +1,22 @@
 /* eslint-disable react/prop-types */
 import React from "react";
 import { renderHook } from "@testing-library/react-hooks";
-import { ThemeProvider } from "emotion-theming";
+import { ThemeProvider } from "@emotion/react";
 
 import createStyles from "./createStyles";
+import createTheme from "../createTheme";
 import defaultTheme from "../createTheme/defaultTheme";
 
 describe("createStyles()", () => {
+  const theme = createTheme({
+    colors: {
+      ...defaultTheme.colors,
+      background: { primary: "red", secondary: "white" },
+    },
+  });
+
   const wrapper: React.FC = ({ children }) => (
-    <ThemeProvider theme={{ colors: { background: { primary: "red" } } }}>
-      {children}
-    </ThemeProvider>
+    <ThemeProvider theme={theme}>{children}</ThemeProvider>
   );
 
   it("returns styles using ThemeProvider", () => {

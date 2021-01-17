@@ -1,7 +1,5 @@
 import React from "react";
-import { Interpolation } from "@emotion/react";
-
-import { Theme } from "../createTheme/types";
+import { Interpolation, Theme } from "@emotion/react";
 
 /**
  * Creates a high-order component that can be used to pass given styles
