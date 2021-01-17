@@ -9,7 +9,7 @@
     "eject": "react-scripts eject"
   },
   "dependencies": {
-    "@emotion/core": "^10.1.1",
+    "@emotion/react": "^11.1.4",
     "emotion-theming": "^10.0.27",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
@@ -56,7 +56,10 @@
     ],
     "plugins": [
       "emotion"
-    ]
+    ],
+    "rules": {
+      "react/react-in-jsx-scope": "off"
+    }
   },
   "husky": {
     "hooks": {

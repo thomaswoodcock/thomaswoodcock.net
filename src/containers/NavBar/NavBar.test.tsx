@@ -1,4 +1,6 @@
-import React from "react";
+/* eslint-disable no-native-reassign */
+/* eslint-disable no-global-assign */
+
 import { fireEvent, render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { createMemoryHistory } from "history";

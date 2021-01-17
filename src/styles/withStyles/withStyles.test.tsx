@@ -17,7 +17,7 @@ describe("withStyles()", () => {
   it("injects styles using ThemeProvider", () => {
     // Arrange
     const styles = createStyles({ backgroundColor: "black" });
-    const Component = (props) => props.styles.backgroundColor;
+    const Component = (props: any) => props.styles.backgroundColor;
     const ComponentWithStyles = withStyles(styles)(Component);
 
     // Act
@@ -30,7 +30,7 @@ describe("withStyles()", () => {
   it("injects styles using default theme", () => {
     // Arrange
     const styles = createStyles({ backgroundColor: "black" });
-    const Component = (props) => props.styles.backgroundColor;
+    const Component = (props: any) => props.styles.backgroundColor;
     const ComponentWithStyles = withStyles(styles)(Component);
 
     // Act
@@ -46,7 +46,7 @@ describe("withStyles()", () => {
       backgroundColor: theme.colors.background.primary,
     }));
 
-    const Component = (props) => props.styles.backgroundColor;
+    const Component = (props: any) => props.styles.backgroundColor;
     const ComponentWithStyles = withStyles(styles)(Component);
 
     // Act
@@ -62,7 +62,7 @@ describe("withStyles()", () => {
       backgroundColor: theme.colors.background.primary,
     }));
 
-    const Component = (props) => props.styles.backgroundColor;
+    const Component = (props: any) => props.styles.backgroundColor;
     const ComponentWithStyles = withStyles(styles)(Component);
 
     // Act

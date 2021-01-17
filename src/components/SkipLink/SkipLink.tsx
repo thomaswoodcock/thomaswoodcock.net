@@ -1,5 +1,4 @@
-/** @jsxImportSource @emotion/core */
-import React from "react";
+/** @jsxImportSource @emotion/react */
 import { HashLink } from "react-router-hash-link";
 
 import { createStyles } from "../../styles";

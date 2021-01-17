@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import { InterpolationWithTheme } from "@emotion/core";
+import { Interpolation } from "@emotion/react";
 import { useTheme } from "emotion-theming";
 
 import createTheme from "../createTheme";
@@ -11,7 +11,7 @@ import { Theme } from "../createTheme/types";
  * @returns A `useStyles` React hook used to access the styles
  * from within a component.
  */
-const createStyles = <T extends Partial<InterpolationWithTheme<Theme>>>(
+const createStyles = <T extends Partial<Interpolation<Theme>>>(
   style: T | ((theme: Theme) => T)
 ): (() => T) => {
   const useStyles = () => {

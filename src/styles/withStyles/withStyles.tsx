@@ -1,5 +1,5 @@
-import { InterpolationWithTheme } from "@emotion/core";
 import React from "react";
+import { Interpolation } from "@emotion/react";
 
 import { Theme } from "../createTheme/types";
 
@@ -8,7 +8,7 @@ import { Theme } from "../createTheme/types";
  * into children.
  * @param styles An object or function that defines style options.
  */
-const withStyles = <T extends Partial<InterpolationWithTheme<Theme>>>(
+const withStyles = <T extends Partial<Interpolation<Theme>>>(
   useStyles: () => T
 ): ((component: React.ElementType) => React.ForwardRefExoticComponent<any>) => {
   return (component) => {
