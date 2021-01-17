@@ -9,12 +9,12 @@ describe("<Footer />", () => {
 
     // Assert
     expect(container.firstChild).toMatchInlineSnapshot(`
-      .emotion-1 {
+      .emotion-0 {
         padding: calc(1rem * 1.4 * 1.4 * 1.4);
         text-align: center;
       }
 
-      .emotion-0 {
+      .emotion-1 {
         margin-left: auto;
         margin-right: auto;
         max-width: 35rem;
@@ -23,10 +23,10 @@ describe("<Footer />", () => {
       }
 
       <footer
-        class="emotion-1"
+        class="emotion-0"
       >
         <div
-          class="emotion-0"
+          class="emotion-1"
         >
           <p>
             <small>

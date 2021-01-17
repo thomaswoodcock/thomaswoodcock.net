@@ -17,6 +17,7 @@
     "react-scripts": "4.0.1"
   },
   "devDependencies": {
+    "@emotion/jest": "^11.1.0",
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.3",
     "@testing-library/react-hooks": "^5.0.0",
@@ -31,7 +32,6 @@
     "eslint-plugin-jest-dom": "^3.6.5",
     "eslint-plugin-testing-library": "^3.10.1",
     "husky": "^4.3.8",
-    "jest-emotion": "^10.0.32",
     "prettier": "^2.2.1",
     "pretty-quick": "^3.1.0",
     "react-test-renderer": "^17.0.1",
@@ -67,7 +67,7 @@
   },
   "jest": {
     "snapshotSerializers": [
-      "jest-emotion"
+      "@emotion/jest/serializer"
     ]
   },
   "prettier": {}

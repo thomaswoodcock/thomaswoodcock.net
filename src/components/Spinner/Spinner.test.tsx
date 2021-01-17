@@ -25,7 +25,7 @@ describe("<Spinner />", () => {
         }
       }
 
-      .emotion-1 {
+      .emotion-0 {
         -webkit-align-items: center;
         -webkit-box-align: center;
         -ms-flex-align: center;
@@ -45,7 +45,7 @@ describe("<Spinner />", () => {
         text-align: center;
       }
 
-      .emotion-0 {
+      .emotion-1 {
         -webkit-animation: animation-0 1s infinite linear;
         animation: animation-0 1s infinite linear;
         height: 50px;
@@ -53,11 +53,11 @@ describe("<Spinner />", () => {
       }
 
       <div
-        class="emotion-1"
+        class="emotion-0"
         role="progressbar"
       >
         <svg
-          class="emotion-0"
+          class="emotion-1"
           viewBox="0 0 100 100"
         >
           <circle
