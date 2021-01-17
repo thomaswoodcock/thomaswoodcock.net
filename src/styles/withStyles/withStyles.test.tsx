@@ -1,23 +1,29 @@
 /* eslint-disable react/prop-types */
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import { ThemeProvider } from "emotion-theming";
+import { ThemeProvider } from "@emotion/react";
 
 import defaultTheme from "../createTheme/defaultTheme";
+import createTheme from "../createTheme";
 import createStyles from "../createStyles";
 import withStyles from "./withStyles";
 
 describe("withStyles()", () => {
+  const theme = createTheme({
+    colors: {
+      ...defaultTheme.colors,
+      background: { primary: "red", secondary: "white" },
+    },
+  });
+
   const wrapper: React.FC = ({ children }) => (
-    <ThemeProvider theme={{ colors: { background: { primary: "red" } } }}>
-      {children}
-    </ThemeProvider>
+    <ThemeProvider theme={theme}>{children}</ThemeProvider>
   );
 
   it("injects styles using ThemeProvider", () => {
     // Arrange
     const styles = createStyles({ backgroundColor: "black" });
-    const Component = (props) => props.styles.backgroundColor;
+    const Component = (props: any) => props.styles.backgroundColor;
     const ComponentWithStyles = withStyles(styles)(Component);
 
     // Act
@@ -30,7 +36,7 @@ describe("withStyles()", () => {
   it("injects styles using default theme", () => {
     // Arrange
     const styles = createStyles({ backgroundColor: "black" });
-    const Component = (props) => props.styles.backgroundColor;
+    const Component = (props: any) => props.styles.backgroundColor;
     const ComponentWithStyles = withStyles(styles)(Component);
 
     // Act
@@ -46,7 +52,7 @@ describe("withStyles()", () => {
       backgroundColor: theme.colors.background.primary,
     }));
 
-    const Component = (props) => props.styles.backgroundColor;
+    const Component = (props: any) => props.styles.backgroundColor;
     const ComponentWithStyles = withStyles(styles)(Component);
 
     // Act
@@ -62,7 +68,7 @@ describe("withStyles()", () => {
       backgroundColor: theme.colors.background.primary,
     }));
 
-    const Component = (props) => props.styles.backgroundColor;
+    const Component = (props: any) => props.styles.backgroundColor;
     const ComponentWithStyles = withStyles(styles)(Component);
 
     // Act

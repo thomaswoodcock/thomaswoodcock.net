@@ -1,6 +1,5 @@
-/** @jsxImportSource @emotion/core */
-import React from "react";
-import { keyframes } from "@emotion/core";
+/** @jsxImportSource @emotion/react */
+import { keyframes } from "@emotion/react";
 
 import Box from "../Box";
 

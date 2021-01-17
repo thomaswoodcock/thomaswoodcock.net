@@ -57,25 +57,27 @@ export type ThemeBase = {
   };
 };
 
-/** Represents a theme that can be used to customize the page. */
-export interface Theme extends ThemeBase {
-  breakpoints: ThemeBase["breakpoints"] & {
-    /** Generates a media query for the specified breakpoint and below. */
-    down: (breakpoint: "xs" | "sm" | "md" | "lg") => string;
-    /** Generates a media query for the specified breakpoint and above. */
-    up: (breakpoint: "xs" | "sm" | "md" | "lg") => string;
-  };
-
-  sizing: ThemeBase["sizing"] & {
-    getSize: {
-      /** Calculates a size using the base ratio, unit, and given number. */
-      (size: number): string;
-      /** Calculates a size using the base ratio, unit, and numbers for top and bottom, and left and right. */
-      (topBottom: number, leftRight: number): string;
-      /** Calculates a size using the base ratio, unit, and numbers for top, left and right, and bottom. */
-      (top: number, leftRight: number, bottom: number): string;
-      /** Calculates a size using the base ratio, unit, and numbers for top, right, bottom and left. */
-      (top: number, right: number, bottom: number, left: number): string;
+declare module "@emotion/react" {
+  /** Represents a theme that can be used to customize the page. */
+  export interface Theme extends ThemeBase {
+    breakpoints: ThemeBase["breakpoints"] & {
+      /** Generates a media query for the specified breakpoint and below. */
+      down: (breakpoint: "xs" | "sm" | "md" | "lg") => string;
+      /** Generates a media query for the specified breakpoint and above. */
+      up: (breakpoint: "xs" | "sm" | "md" | "lg") => string;
     };
-  };
+
+    sizing: ThemeBase["sizing"] & {
+      getSize: {
+        /** Calculates a size using the base ratio, unit, and given number. */
+        (size: number): string;
+        /** Calculates a size using the base ratio, unit, and numbers for top and bottom, and left and right. */
+        (topBottom: number, leftRight: number): string;
+        /** Calculates a size using the base ratio, unit, and numbers for top, left and right, and bottom. */
+        (top: number, leftRight: number, bottom: number): string;
+        /** Calculates a size using the base ratio, unit, and numbers for top, right, bottom and left. */
+        (top: number, right: number, bottom: number, left: number): string;
+      };
+    };
+  }
 }

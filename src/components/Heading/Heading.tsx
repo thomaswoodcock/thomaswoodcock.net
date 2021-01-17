@@ -1,5 +1,5 @@
-/** @jsxImportSource @emotion/core */
-import React, { DetailedHTMLProps, HTMLAttributes } from "react";
+/** @jsxImportSource @emotion/react */
+import { DetailedHTMLProps, HTMLAttributes } from "react";
 
 import { createStyles } from "../../styles";
 

@@ -1,5 +1,5 @@
-/** @jsxImportSource @emotion/core */
-import React, { Component } from "react";
+/** @jsxImportSource @emotion/react */
+import { Component } from "react";
 
 import Box from "../Box";
 import Button from "../Button";

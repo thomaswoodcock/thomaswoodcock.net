@@ -1,5 +1,5 @@
-/** @jsxImportSource @emotion/core */
-import React, { Fragment } from "react";
+/** @jsxImportSource @emotion/react */
+import { Fragment } from "react";
 
 import Box from "../../components/Box";
 import Header from "../../components/Header";

@@ -1,4 +1,3 @@
-import React from "react";
 import { render } from "@testing-library/react";
 
 import Box from "./Box";
@@ -11,7 +10,7 @@ describe("<Box />", () => {
     // Assert
     expect(container.firstChild).toMatchInlineSnapshot(`
       <div
-        class="css-sne8hi-Box"
+        class="emotion-0"
       >
         Test Box
       </div>
@@ -38,8 +37,8 @@ describe("<Box />", () => {
         flex-direction: column;
         height: 100%;
         -webkit-box-pack: center;
-        -webkit-justify-content: center;
         -ms-flex-pack: center;
+        -webkit-justify-content: center;
         justify-content: center;
         text-align: center;
       }

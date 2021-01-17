@@ -1,4 +1,3 @@
-import React from "react";
 import { render } from "@testing-library/react";
 
 import Spinner from "./Spinner";
@@ -13,18 +12,20 @@ describe("<Spinner />", () => {
       @keyframes animation-0 {
         0% {
           -webkit-transform: rotate(0deg);
+          -moz-transform: rotate(0deg);
           -ms-transform: rotate(0deg);
           transform: rotate(0deg);
         }
 
         100% {
           -webkit-transform: rotate(360deg);
+          -moz-transform: rotate(360deg);
           -ms-transform: rotate(360deg);
           transform: rotate(360deg);
         }
       }
 
-      .emotion-1 {
+      .emotion-0 {
         -webkit-align-items: center;
         -webkit-box-align: center;
         -ms-flex-align: center;
@@ -38,13 +39,13 @@ describe("<Spinner />", () => {
         flex-direction: column;
         height: 100%;
         -webkit-box-pack: center;
-        -webkit-justify-content: center;
         -ms-flex-pack: center;
+        -webkit-justify-content: center;
         justify-content: center;
         text-align: center;
       }
 
-      .emotion-0 {
+      .emotion-1 {
         -webkit-animation: animation-0 1s infinite linear;
         animation: animation-0 1s infinite linear;
         height: 50px;
@@ -52,11 +53,11 @@ describe("<Spinner />", () => {
       }
 
       <div
-        class="emotion-1"
+        class="emotion-0"
         role="progressbar"
       >
         <svg
-          class="emotion-0"
+          class="emotion-1"
           viewBox="0 0 100 100"
         >
           <circle

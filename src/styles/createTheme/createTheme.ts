@@ -1,5 +1,6 @@
-import { Theme, ThemeBase } from "./types";
+import { Theme } from "@emotion/react";
 
+import { ThemeBase } from "./types";
 import defaultTheme from "./defaultTheme";
 
 const getSize = (theme: ThemeBase, args: number[]) =>
