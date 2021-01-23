@@ -5,6 +5,8 @@ import Heading from "../Heading";
 
 import { createStyles } from "../../styles";
 
+import { ErrorBoundaryState } from "../../containers/ErrorBoundary/ErrorBoundary";
+
 const useStyles = createStyles((theme) => ({
   button: {
     marginTop: theme.sizing.getSize(1),
@@ -15,7 +17,7 @@ const useStyles = createStyles((theme) => ({
 }));
 
 export interface ErrorStateProps {
-  error?: Partial<Error> | null;
+  error?: ErrorBoundaryState["error"];
   resetError?: () => void;
 }
 
