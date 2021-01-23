@@ -1,1 +1,1 @@
-export { default, ErrorStateProps } from "./ErrorState";
+export { default } from "./ErrorState";
