@@ -9,7 +9,11 @@ interface ErrorBoundaryProps {
   component?: ComponentType<ErrorStateProps>;
 }
 
-class ErrorBoundary extends Component<ErrorBoundaryProps> {
+export type ErrorBoundaryState = {
+  error: Partial<Error> | null;
+};
+
+class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
   state = {
     error: null,
   };

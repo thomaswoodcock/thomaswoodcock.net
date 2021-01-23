@@ -4,6 +4,7 @@ import Button from "../Button";
 import Heading from "../Heading";
 
 import { createStyles } from "../../styles";
+import { ErrorBoundaryState } from "../../containers/ErrorBoundary";
 
 const useStyles = createStyles((theme) => ({
   button: {
@@ -15,7 +16,7 @@ const useStyles = createStyles((theme) => ({
 }));
 
 export interface ErrorStateProps {
-  error?: Partial<Error> | null;
+  error?: ErrorBoundaryState["error"];
   resetError?: () => void;
 }
 
