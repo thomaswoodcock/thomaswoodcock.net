@@ -53,7 +53,7 @@ describe("<ErrorBoundary />", () => {
 
     const ErrorState = ({ error, resetError }: ErrorStateProps) => (
       <div>
-        <p>{error.message}</p>
+        <p>{error?.message}</p>
         <button onClick={resetError}>Reset</button>
       </div>
     );
