@@ -1,13 +1,14 @@
 import React from "react";
-import { Interpolation, Theme } from "@emotion/react";
+
+import createStyles from "../createStyles";
 
 /**
  * Creates a high-order component that can be used to pass given styles
  * into children.
  * @param styles An object or function that defines style options.
  */
-const withStyles = <T extends Partial<Interpolation<Theme>>>(
-  useStyles: () => T
+const withStyles = (
+  useStyles: ReturnType<typeof createStyles>
 ): ((component: React.ElementType) => React.ForwardRefExoticComponent<any>) => {
   return (component) => {
     const Component = component;

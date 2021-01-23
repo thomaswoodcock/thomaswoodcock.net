@@ -13,11 +13,11 @@ const createStyles = <T extends Partial<Interpolation<Theme>>>(
   style: T | ((theme: Theme) => T)
 ): (() => T) => {
   const useStyles = () => {
-    const emotionTheme: Theme = useTheme();
+    const emotionTheme = useTheme();
 
     const styles = useMemo(() => {
       if (typeof style === "function") {
-        const theme: Theme =
+        const theme =
           (Object.keys(emotionTheme).length === 0 && createTheme()) ||
           emotionTheme;
 
