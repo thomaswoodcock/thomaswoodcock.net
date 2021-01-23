@@ -3,7 +3,7 @@ import React, { lazy, Suspense } from "react";
 import { Global, ThemeProvider } from "@emotion/react";
 import { Redirect, Route, Switch } from "react-router-dom";
 
-import ErrorBoundary from "../../components/ErrorBoundary";
+import ErrorBoundary from "../../containers/ErrorBoundary";
 import Footer from "../../components/Footer";
 import NavBar from "../NavBar";
 import SkipLink from "../../components/SkipLink";
