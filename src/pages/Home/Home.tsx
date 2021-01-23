@@ -8,10 +8,8 @@ import Heading from "../../components/Heading";
 import { createStyles } from "../../styles";
 
 const useStyles = createStyles((theme) => ({
-  content: {
-    "& * + *": {
-      marginTop: theme.sizing.getSize(0),
-    },
+  "& * + *": {
+    marginTop: theme.sizing.getSize(0),
   },
 }));
 
@@ -25,7 +23,7 @@ const Home = () => {
         title="Thomas Woodcock"
       />
       <Box variant="contained">
-        <article css={styles.content}>
+        <article css={styles}>
           <Heading level={2}>Hello</Heading>
           <p>
             {"I'm Tom, I'm a web developer, and this is my personal website. "}

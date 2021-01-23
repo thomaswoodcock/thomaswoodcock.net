@@ -3,6 +3,8 @@ import userEvent from "@testing-library/user-event";
 
 import ErrorBoundary from "./ErrorBoundary";
 
+import { ErrorStateProps } from "../../components/ErrorState/ErrorState";
+
 describe("<ErrorBoundary />", () => {
   let initialError: any;
 
@@ -14,7 +16,7 @@ describe("<ErrorBoundary />", () => {
     console.error = initialError;
   });
 
-  it("renders error message with reload button if error occurs", () => {
+  it("renders default error state if error occurs", () => {
     // Arrange
     console.error = jest.fn();
 
@@ -35,6 +37,37 @@ describe("<ErrorBoundary />", () => {
     expect(screen.getByRole("heading", { name: "Error" })).toBeVisible();
 
     userEvent.click(screen.getByRole("button", { name: /reload/i }));
+    expect(screen.getByText("Test Child")).toBeVisible();
+  });
+
+  it("renders custom error state if error occurs", () => {
+    // Arrange
+    console.error = jest.fn();
+
+    const ErrorComponent = jest
+      .fn()
+      .mockImplementation(() => "Test Child")
+      .mockImplementationOnce(() => {
+        throw new Error("Test Error");
+      });
+
+    const ErrorState = ({ error, resetError }: ErrorStateProps) => (
+      <div>
+        <p>{error.message}</p>
+        <button onClick={resetError}>Reset</button>
+      </div>
+    );
+
+    // Act Assert
+    render(
+      <ErrorBoundary component={ErrorState}>
+        <ErrorComponent />
+      </ErrorBoundary>
+    );
+
+    expect(screen.getByText("Test Error")).toBeVisible();
+
+    userEvent.click(screen.getByRole("button", { name: /reset/i }));
     expect(screen.getByText("Test Child")).toBeVisible();
   });
 
