@@ -23,12 +23,13 @@ const getSize = (theme: ThemeBase, args: number[]) =>
  * options and a base theme.
  * @param theme The theme options with which to create the theme.
  * @param baseTheme The base theme on which to build the new theme.
+ * @returns A `Theme` that can be used to customize the page.
  */
-const createTheme: (
-  theme?: Partial<ThemeBase>,
-  baseTheme?: ThemeBase
-) => Theme = (theme = {}, baseTheme = defaultTheme) => {
-  const combinedTheme: ThemeBase = {
+const createTheme = (
+  theme: Partial<ThemeBase> = {},
+  baseTheme: ThemeBase = defaultTheme
+): Theme => {
+  const combinedTheme = {
     ...baseTheme,
     ...theme,
   };
