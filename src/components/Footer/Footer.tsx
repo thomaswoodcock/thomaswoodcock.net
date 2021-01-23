@@ -18,7 +18,7 @@ const Footer = () => {
         <p>
           <small>
             &copy;{" "}
-            <a href="https://github.com/thomaswoodcock">Thomas Woodcock</a> 2020
+            <a href="https://github.com/thomaswoodcock">Thomas Woodcock</a> 2021
           </small>
         </p>
       </Box>
