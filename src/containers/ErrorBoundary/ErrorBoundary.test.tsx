@@ -3,7 +3,7 @@ import userEvent from "@testing-library/user-event";
 
 import ErrorBoundary from "./ErrorBoundary";
 
-import { ErrorStateProps } from "../../components/ErrorState/ErrorState";
+import { ErrorStateProps } from "../../components/ErrorState";
 
 describe("<ErrorBoundary />", () => {
   let initialError: any;

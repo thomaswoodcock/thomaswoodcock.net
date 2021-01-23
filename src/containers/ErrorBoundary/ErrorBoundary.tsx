@@ -1,9 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { Component, ComponentType } from "react";
 
-import ErrorState, {
-  ErrorStateProps,
-} from "../../components/ErrorState/ErrorState";
+import ErrorState, { ErrorStateProps } from "../../components/ErrorState";
 
 interface ErrorBoundaryProps {
   component?: ComponentType<ErrorStateProps>;
