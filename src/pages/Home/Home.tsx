@@ -33,8 +33,7 @@ const Home = () => {
           and discuss the projects that I'm working on.`}
           </p>
           <p>
-            {`In the meantime, this website is my project. Come back every now
-          and then to see how it's progressing!`}
+            {`Come back another time and something may be here!`}
           </p>
         </article>
       </Box>
