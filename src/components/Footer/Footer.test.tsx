@@ -37,7 +37,7 @@ describe("<Footer />", () => {
               >
                 Thomas Woodcock
               </a>
-               2021
+               2022
             </small>
           </p>
         </div>
