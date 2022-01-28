@@ -33,7 +33,7 @@ const Home = () => {
           and discuss the projects that I'm working on.`}
           </p>
           <p>
-            {`Come back another time and something may be here!`}
+            {`See you later!`}
           </p>
         </article>
       </Box>
